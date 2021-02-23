@@ -68,7 +68,8 @@ class WineController extends Controller
      */
     public function edit($id)
     {
-        //
+        $wines = \App\Wine::find($id);
+        return view('wine.edit', compact('wines'));//
     }
 
     /**
@@ -80,7 +81,17 @@ class WineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($request->action === 'back') {
+            return redirect()->route('wine.index');
+        } else {
+            $wine = \App\Wine::find($id);
+            $wine->name = $request->name;
+            $wine->country = $request->country;
+            $wine->kind = $request->kind;
+            $wine->type = $request->type;
+            $wine->save();
+            return redirect()->route('wine.index');
+        }//
     }
 
     /**
@@ -91,6 +102,8 @@ class WineController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $wine = \App\Wine::find($id);
+        $wine->delete();
+        return redirect()->route('wine.index');
     }
 }

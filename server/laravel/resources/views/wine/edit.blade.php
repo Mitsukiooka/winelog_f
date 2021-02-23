@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Admin Edit</div>
+                <div class="card-header">Wine Edit</div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -26,48 +26,37 @@
                         </ul>
                         </div>
                     @endif
-                    <form action="/admin/{{ $admins->id }}" method="POST">
+                    <form action="/wine/{{ $wines->id }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group row">
                             <label for="id" class="col-md-4 col-form-label text-md-right">{{ __('ID') }}</label>
                             <div class="col-md-6">
-                                <input id="id" class="input-group-text text-md-left" type="text" name="id" value="{{ old('$admins->id', $admins->id) }}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="admin_code" class="col-md-4 col-form-label text-md-right">{{ __('Admin Code') }}</label>
-                            <div class="col-md-6">
-                                <input id="admin_code" type="text" class="form-control" name="admin_code" value="{{ old('admin_code',$admins->admin_code) }}">
+                                <input id="id" class="input-group-text text-md-left" type="text" name="id" value="{{ old('$wines->id', $wines->id) }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$admins->name) }}">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$wines->name) }}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+                            <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
                             <div class="col-md-6">
-                                <input id="role" type="text" class="form-control" name="role" value="{{ old('role',$admins->role) }}">
+                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country',$wines->country) }}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="kind" class="col-md-4 col-form-label text-md-right">{{ __('Kind') }}</label>
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input id="kind" type="text" class="form-control" name="kind" value="{{ old('kind',$wines->kind) }}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                <input id="type" type="text" class="form-control" name="type" value="{{ old('type',$wines->type) }}">
                             </div>
                         </div>
                         <div class="form-group row mb-0">
