@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::resource('wine', 'wineController');
 
 Route::get('/','WineController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
