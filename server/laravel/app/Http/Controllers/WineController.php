@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class WineController extends Controller
 {
@@ -37,6 +39,8 @@ class WineController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * @param WineRequest $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -48,6 +52,7 @@ class WineController extends Controller
             $wine->country = $request->country;
             $wine->kind = $request->kind;
             $wine->type = $request->type;
+            $wine->image_file = $request->image_file->storeAs('public/wine_images', Auth::id() . '.jpg');
             $wine->save();
             return redirect()->route('wine.index');
         }//

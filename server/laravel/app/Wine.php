@@ -12,6 +12,8 @@ class Wine extends Model
         'name',
         'country',
         'kind',
-        'type'
+        'type',
+        'image_file',
+        'image_file_path'
     ];//
 }
