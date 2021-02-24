@@ -11,10 +11,15 @@ class WineController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $wines = \App\Wine::all();
-        return view('wine/index', compact('wines'));//
+        $name = $request->input('name');
+        $query = \App\Wine::query();
+        if (!empty($name)) {
+            $query->where('name', 'LIKE', "%{$name}%");
+        }
+        $wines = $query->get();
+        return view('wine/index', compact('wines', 'name'));
     }
 
     /**

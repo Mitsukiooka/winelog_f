@@ -29,14 +29,16 @@
                         </ul>
                         </div>
                     @endif
-                    <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wine.create') }}'">
-                        {{ __('追加') }}
-                    </button>
+                    <form class="form-inline my-2 my-lg-0 ml-2">
+                        <div class="form-group">
+                        <input type="text" class="form-control" name="name" value="{{ $name }}">
+                        </div>
+                        <input type="submit" value="検索" class="btn btn-info">
+                    </form>
                     <div class="table-resopnsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>{{__('ID')}}</th>
                                     <th>{{__('name')}}</th>
                                     <th>{{__('country')}}</th>
                                     <th>{{__('kind')}}</th>
@@ -47,8 +49,7 @@
                                 @if(isset($wines))  
                                     @foreach ($wines as $wine)
                                         <tr>
-                                            <td><a href="/wine/{{ $wine->id }}">{{ $wine->id }}</a></td>
-                                            <td>{{ $wine->name }}</td>
+                                            <td><a href="/wine/{{ $wine->id }}">{{ $wine->name }}</a></td>
                                             <td>{{ $wine->country }}</td>
                                             <td>{{ $wine->kind}}</td>
                                             <td>{{ $wine->type}}</td>
@@ -58,6 +59,9 @@
                             </tbody>
                         </table>
                     </div>
+                    <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wine.create') }}'">
+                        {{ __('追加') }}
+                    </button>
                 </div>
             </div>
         </div>
