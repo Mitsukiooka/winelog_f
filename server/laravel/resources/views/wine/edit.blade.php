@@ -30,33 +30,33 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group row">
-                            <label for="id" class="col-md-4 col-form-label text-md-right">{{ __('ID') }}</label>
-                            <div class="col-md-6">
-                                <input id="id" class="input-group-text text-md-left" type="text" name="id" value="{{ old('$wines->id', $wines->id) }}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$wines->name) }}">
+                                <input id="name" class="input-group-text text-md-left" type="text" name="name" value="{{ $wines->name }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
                             <div class="col-md-6">
-                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country',$wines->country) }}">
+                                <input id="country" type="text" class="form-control" name="country" value="{{ $wines->country }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="kind" class="col-md-4 col-form-label text-md-right">{{ __('Kind') }}</label>
                             <div class="col-md-6">
-                                <input id="kind" type="text" class="form-control" name="kind" value="{{ old('kind',$wines->kind) }}">
+                                <input id="kind" type="text" class="form-control" name="kind" value="{{ $wines->kind }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>
                             <div class="col-md-6">
-                                <input id="type" type="text" class="form-control" name="type" value="{{ old('type',$wines->type) }}">
+                                <input id="type" type="text" class="form-control" name="type" value="{{ $wines->type }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
+                            <div class="col-md-6">
+                                <input id="image_file" type="file" name="image_file" value="{{ $wines->image_file }}">
                             </div>
                         </div>
                         <div class="form-group row mb-0">

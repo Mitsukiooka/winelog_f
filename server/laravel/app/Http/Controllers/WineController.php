@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+
 class WineController extends Controller
 {
     /**
@@ -48,11 +49,14 @@ class WineController extends Controller
             return redirect()->route('wine.index');
         } else {
             $wine = new \App\Wine;
+            if ($request->hasFile('image_file')) {
+                $path = $request->file('image_file')->store('public/image');
+                $wine->image_file = basename($path);
+            }
             $wine->name = $request->name;
             $wine->country = $request->country;
             $wine->kind = $request->kind;
             $wine->type = $request->type;
-            $wine->image_file = $request->image_file->storeAs('public/wine_images', Auth::id() . '.jpg');
             $wine->save();
             return redirect()->route('wine.index');
         }//
@@ -95,6 +99,9 @@ class WineController extends Controller
             return redirect()->route('wine.index');
         } else {
             $wine = \App\Wine::find($id);
+            if($request->file('image_file')) {
+                Storage::delete('public/image/'.$wine->image_file);
+            }
             $wine->name = $request->name;
             $wine->country = $request->country;
             $wine->kind = $request->kind;

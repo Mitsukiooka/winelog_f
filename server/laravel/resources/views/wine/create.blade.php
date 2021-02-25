@@ -27,7 +27,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('wine.store') }}" method="POST" enctype='multipart/form-data'>{{ csrf_field() }}
+                    <form action="{{ route('wine.store') }}" method="POST" enctype='multipart/form-data'>
                         @csrf
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

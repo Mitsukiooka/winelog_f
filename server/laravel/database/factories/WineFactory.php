@@ -11,6 +11,7 @@ $factory->define(App\Wine::class, function (Faker $faker) {
         'name' => $faker->name,
         'country' => $faker->country,
         'kind' => $faker->randomElement(['赤', '白', 'スパークリング', 'ロゼ']),
-        'type' => $faker->randomElement(['シャルドネ', 'リースリング', 'ピノノワール'])//
+        'type' => $faker->randomElement(['シャルドネ', 'リースリング', 'ピノノワール']),
+        'image_file' => $faker->slug
     ];
 });

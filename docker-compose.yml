@@ -6,6 +6,8 @@ services:
     container_name: php
     volumes:
     - ./server:/var/www
+    depends_on:
+      - db
 
   nginx:
     image: nginx
