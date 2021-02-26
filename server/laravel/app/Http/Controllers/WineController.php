@@ -99,8 +99,11 @@ class WineController extends Controller
             return redirect()->route('wine.index');
         } else {
             $wine = \App\Wine::find($id);
-            if($request->file('image_file')) {
-                Storage::delete('public/image/'.$wine->image_file);
+            if ($request->file('image_file')) {
+                $old_image = 'public/image/'.$wine->image_file;
+                if (file_exists($old_image)) {
+                    @unlink($old_image);
+                }
             }
             $wine->name = $request->name;
             $wine->country = $request->country;
