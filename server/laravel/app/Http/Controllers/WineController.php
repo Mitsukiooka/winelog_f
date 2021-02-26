@@ -50,13 +50,16 @@ class WineController extends Controller
         } else {
             $wine = new \App\Wine;
             if ($request->hasFile('image_file')) {
-                $path = $request->file('image_file')->store('public/image');
-                $wine->image_file = basename($path);
+                $file = $request->image_file;
+                $fileName = $file->getClientOriginalName();
+                $filePath = public_path('/wine_images');
+                $file->move($filePath, $fileName);
             }
             $wine->name = $request->name;
             $wine->country = $request->country;
             $wine->kind = $request->kind;
             $wine->type = $request->type;
+            $wine->image_file = $fileName;
             $wine->save();
             return redirect()->route('wine.index');
         }//
@@ -83,7 +86,7 @@ class WineController extends Controller
     public function edit($id)
     {
         $wines = \App\Wine::find($id);
-        return view('wine.edit', compact('wines'));//
+        return view('wine.edit', ['wines' => $wines]);//
     }
 
     /**
@@ -98,18 +101,19 @@ class WineController extends Controller
         if($request->action === 'back') {
             return redirect()->route('wine.index');
         } else {
-            $wine = \App\Wine::find($id);
-            if ($request->file('image_file')) {
-                $old_image = 'public/image/'.$wine->image_file;
-                if (file_exists($old_image)) {
-                    @unlink($old_image);
-                }
+            $wines = \App\Wine::find($id);
+            if ($request->hasFile('image_file')) {
+                $file = $request->image_file;
+                $fileName = $file->getClientOriginalName();
+                $filePath = public_path('/wine_images');
+                $file->move($filePath, $fileName);
             }
-            $wine->name = $request->name;
-            $wine->country = $request->country;
-            $wine->kind = $request->kind;
-            $wine->type = $request->type;
-            $wine->save();
+            $wines->name = $request->name;
+            $wines->country = $request->country;
+            $wines->kind = $request->kind;
+            $wines->type = $request->type;
+            $wines->image_file = $fileName;
+            $wines->save();
             return redirect()->route('wine.index');
         }//
     }

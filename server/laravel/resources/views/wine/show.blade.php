@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
-                        <img src="{{asset('storage/image/'.$wines->image_file)}}">
+                        <img src="../../wine_images/{{ $wines->image_file }}" width="200px" height="200px">
                     </div>
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
