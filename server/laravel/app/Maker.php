@@ -12,5 +12,10 @@ class Maker extends Model
         'name',
         'country',
         'image_file'
-    ];//
+    ];
+    
+    Public function wines()
+    {
+        return $this->hasMany('\App\Wine');
+    }
 }

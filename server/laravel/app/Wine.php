@@ -14,5 +14,10 @@ class Wine extends Model
         'kind',
         'type',
         'image_file'
-    ];//
+    ];
+
+    Public function maker()
+    {
+        return $this->belongsTo('\App\Maker');
+    }
 }
