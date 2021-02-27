@@ -54,6 +54,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="area" class="col-md-4 col-form-label text-md-right">{{ __('Area') }}</label>
+                            <div class="col-md-6">
+                                <input id="area" type="text" class="form-control" name="area" value="{{ old('area') }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
                             <div class="col-md-6">
                                 <input id="image_file" type="file" name="image_file" value="{{ old('image_file') }}">

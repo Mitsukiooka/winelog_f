@@ -54,6 +54,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="area" class="col-md-4 col-form-label text-md-right">{{ __('Area') }}</label>
+                            <div class="col-md-6">
+                                <input id="area" type="text" class="form-control" name="area" value="{{ $wine->area }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
                             <div class="col-md-6">
                                 <img src="../../wine_images/{{ $wine->image_file }}" width="200px" height="200px">

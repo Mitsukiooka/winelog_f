@@ -8,10 +8,11 @@ use Faker\Generator as Faker;
 $factory->define(App\Wine::class, function (Faker $faker) {
     $date = \Carbon\Carbon::now();
     return [
-        'name' => $faker->name,
-        'country' => $faker->country,
+        'name' => $faker->randomElement(['赤ワイン', '白ワイン', 'ロゼワイン', 'スパークリングワイン']),
+        'country' => $faker->randomElement(['フランス', 'イタリア', 'スペイン', 'チリ', 'アメリカ']),
         'kind' => $faker->randomElement(['赤', '白', 'スパークリング', 'ロゼ']),
         'type' => $faker->randomElement(['シャルドネ', 'リースリング', 'ピノノワール']),
-        'image_file' => $faker->slug
+        'image_file' => $faker->slug,
+        'area' => $faker->city
     ];
 });

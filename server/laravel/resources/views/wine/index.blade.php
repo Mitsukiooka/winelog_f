@@ -43,6 +43,7 @@
                                     <th>{{__('country')}}</th>
                                     <th>{{__('kind')}}</th>
                                     <th>{{__('type')}}</th>
+                                    <th>{{__('area')}}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,6 +54,7 @@
                                             <td>{{ $wine->country }}</td>
                                             <td>{{ $wine->kind}}</td>
                                             <td>{{ $wine->type}}</td>
+                                            <td>{{ $wine->area}}</td>
                                         </tr>
                                     @endforeach
                                 @endif

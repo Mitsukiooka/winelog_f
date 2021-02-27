@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::resource('wine', 'wineController');
+Route::resource('maker', 'makerController');
 
 Route::get('/','WineController@index');
 Auth::routes();

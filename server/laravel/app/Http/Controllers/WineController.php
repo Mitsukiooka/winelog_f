@@ -54,12 +54,13 @@ class WineController extends Controller
                 $fileName = $file->getClientOriginalName();
                 $filePath = public_path('/wine_images');
                 $file->move($filePath, $fileName);
+                $wine->image_file = $fileName;
             }
             $wine->name = $request->name;
             $wine->country = $request->country;
             $wine->kind = $request->kind;
             $wine->type = $request->type;
-            $wine->image_file = $fileName;
+            $wine->area = $request->area;
             $wine->save();
             return redirect()->route('wine.index');
         }//
@@ -107,12 +108,13 @@ class WineController extends Controller
                 $fileName = $file->getClientOriginalName();
                 $filePath = public_path('/wine_images');
                 $file->move($filePath, $fileName);
+                $wine->image_file = $fileName;
             }
             $wine->name = $request->name;
             $wine->country = $request->country;
             $wine->kind = $request->kind;
             $wine->type = $request->type;
-            $wine->image_file = $fileName;
+            $wine->area = $request->area;
             $wine->save();
             return redirect()->route('wine.index');
         }//

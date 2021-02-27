@@ -39,6 +39,12 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ route('wine.index') }}">{{ __('Wine') }}</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ route('maker.index') }}">{{ __('Maker') }}</a>
+                        </li>
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
