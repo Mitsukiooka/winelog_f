@@ -73,8 +73,8 @@ class WineController extends Controller
      */
     public function show($id)
     {
-        $wines = \App\Wine::find($id);
-        return view('wine.show', compact('wines'));//
+        $wine = \App\Wine::find($id);
+        return view('wine.show', compact('wine'));//
     }
 
     /**
@@ -85,8 +85,8 @@ class WineController extends Controller
      */
     public function edit($id)
     {
-        $wines = \App\Wine::find($id);
-        return view('wine.edit', ['wines' => $wines]);//
+        $wine = \App\Wine::find($id);
+        return view('wine.edit', compact('wine'));//
     }
 
     /**
@@ -101,19 +101,19 @@ class WineController extends Controller
         if($request->action === 'back') {
             return redirect()->route('wine.index');
         } else {
-            $wines = \App\Wine::find($id);
+            $wine = \App\Wine::find($id);
             if ($request->hasFile('image_file')) {
                 $file = $request->image_file;
                 $fileName = $file->getClientOriginalName();
                 $filePath = public_path('/wine_images');
                 $file->move($filePath, $fileName);
             }
-            $wines->name = $request->name;
-            $wines->country = $request->country;
-            $wines->kind = $request->kind;
-            $wines->type = $request->type;
-            $wines->image_file = $fileName;
-            $wines->save();
+            $wine->name = $request->name;
+            $wine->country = $request->country;
+            $wine->kind = $request->kind;
+            $wine->type = $request->type;
+            $wine->image_file = $fileName;
+            $wine->save();
             return redirect()->route('wine.index');
         }//
     }

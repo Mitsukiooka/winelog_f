@@ -11,43 +11,43 @@
                     <div class="form-group row">
                         <label for="id" class="col-md-4 col-form-label text-md-right">{{ __('ID') }}</label>
                         <div class="col-md-6 input-group-text">
-                            {{ $wines->id }}
+                            {{ $wine->id }}
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
                         <div class="col-md-6 input-group-text">
-                            {{ $wines->name }}
+                            {{ $wine->name }}
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
                         <div class="col-md-6 input-group-text">
-                            {{ $wines->country }}
+                            {{ $wine->country }}
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="kind" class="col-md-4 col-form-label text-md-right">{{ __('Kind') }}</label>
                         <div class="col-md-6 input-group-text">
-                            {{ $wines->kind }}
+                            {{ $wine->kind }}
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Types') }}</label>
                         <div class="col-md-6 input-group-text">
-                            {{ $wines->type }}
+                            {{ $wine->type }}
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
-                        <img src="../../wine_images/{{ $wines->image_file }}" width="200px" height="200px">
+                        <img src="../../wine_images/{{ $wine->image_file }}" width="200px" height="200px">
                     </div>
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wine.edit', $wines->id) }}'">
+                            <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wine.edit', $wine->id) }}'">
                                 {{ __('変更') }}
                             </button>
-                            <form style="display:inline" action="{{ route('wine.destroy', $wines->id) }}" method="post">
+                            <form style="display:inline" action="{{ route('wine.destroy', $wine->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">

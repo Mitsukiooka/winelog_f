@@ -26,37 +26,37 @@
                         </ul>
                         </div>
                     @endif
-                    <form action="{{ route('wine.update', $wines->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('wine.update', $wine->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
                             <div class="col-md-6">
-                                <input id="name" class="form-control" type="text" name="name" value="{{ $wines->name }}">
+                                <input id="name" class="form-control" type="text" name="name" value="{{ $wine->name }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
                             <div class="col-md-6">
-                                <input id="country" type="text" class="form-control" name="country" value="{{ $wines->country }}">
+                                <input id="country" type="text" class="form-control" name="country" value="{{ $wine->country }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="kind" class="col-md-4 col-form-label text-md-right">{{ __('Kind') }}</label>
                             <div class="col-md-6">
-                                <input id="kind" type="text" class="form-control" name="kind" value="{{ $wines->kind }}">
+                                <input id="kind" type="text" class="form-control" name="kind" value="{{ $wine->kind }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>
                             <div class="col-md-6">
-                                <input id="type" type="text" class="form-control" name="type" value="{{ $wines->type }}">
+                                <input id="type" type="text" class="form-control" name="type" value="{{ $wine->type }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
                             <div class="col-md-6">
-                                <img src="../../wine_images/{{ $wines->image_file }}" width="200px" height="200px">
+                                <img src="../../wine_images/{{ $wine->image_file }}" width="200px" height="200px">
                                 <input id="image_file" type="file" name="image_file">
                             </div>
                         </div>
