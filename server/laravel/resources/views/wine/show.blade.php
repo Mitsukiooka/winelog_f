@@ -47,7 +47,7 @@
                     @if (isset($wine->maker))
                     <div class="form-group row">
                         <label for="maker_id" class="col-md-4 col-form-label text-md-right">{{ __('Maker') }}</label>
-                            <a href="/maker/{{ $wine->maker->id }}">{{ $wine->maker->name }}
+                            <a href="/maker/{{ $wine->maker->id }}">{{ $wine->maker->name }}</a>
                     </div>
                     @endif
                     <div class="form-group row">

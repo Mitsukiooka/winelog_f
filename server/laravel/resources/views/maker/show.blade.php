@@ -35,7 +35,7 @@
                     <div class="form-group row">
                         <label for="wine" class="col-md-4 col-form-label text-md-right">{{ __('Wines') }}</label>
                         <div class="col-md-6 input-group-text">
-                            <a href="/wine/{{ $wine->id }}">{{ $wine->name }}
+                            <a href="/wine/{{ $wine->id }}">{{ $wine->name }}</a>
                         </div>
                     </div>
                     @endforeach
