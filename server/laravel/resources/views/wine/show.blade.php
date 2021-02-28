@@ -39,6 +39,18 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="area" class="col-md-4 col-form-label text-md-right">{{ __('Area') }}</label>
+                        <div class="col-md-6 input-group-text">
+                            {{ $wine->area }}
+                        </div>
+                    </div>
+                    @if (isset($wine->maker))
+                    <div class="form-group row">
+                        <label for="maker_id" class="col-md-4 col-form-label text-md-right">{{ __('Maker') }}</label>
+                            <a href="/maker/{{ $wine->maker->id }}">{{ $wine->maker->name }}
+                    </div>
+                    @endif
+                    <div class="form-group row">
                         <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
                         <img src="../../wine_images/{{ $wine->image_file }}" width="200px" height="200px">
                     </div>

@@ -60,6 +60,16 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="maker_id" class="col-md-4 col-form-label text-md-right">{{ __('Maker') }}</label>
+                            <div class="col-md-6">
+                                <select id="maker_id" name="maker_id">
+                                    @foreach($makers as $maker)
+                                    <option value="{{ $maker->id }}">{{ $maker->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
                             <div class="col-md-6">
                                 <input id="image_file" type="file" name="image_file" value="{{ old('image_file') }}">

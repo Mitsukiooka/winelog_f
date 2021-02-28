@@ -30,6 +30,16 @@
                         <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
                         <img src="../../maker_images/{{ $maker->image_file }}" width="200px" height="200px">
                     </div>
+                    @if (isset($maker->wines))
+                    @foreach ($maker->wines as $wine)
+                    <div class="form-group row">
+                        <label for="wine" class="col-md-4 col-form-label text-md-right">{{ __('Wines') }}</label>
+                        <div class="col-md-6 input-group-text">
+                            <a href="/wine/{{ $wine->id }}">{{ $wine->name }}
+                        </div>
+                    </div>
+                    @endforeach
+                    @endif
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
                             <button type="button" class="btn btn-primary" onclick="location.href='{{ route('maker.edit', $maker->id) }}'">

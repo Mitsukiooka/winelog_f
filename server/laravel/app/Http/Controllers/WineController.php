@@ -32,7 +32,8 @@ class WineController extends Controller
      */
     public function create()
     {
-        return view('wine.create');//
+        $makers = \App\Maker::all();
+        return view('wine.create', compact('makers'));//
     }
 
     /**
@@ -61,6 +62,7 @@ class WineController extends Controller
             $wine->kind = $request->kind;
             $wine->type = $request->type;
             $wine->area = $request->area;
+            $wine->maker_id = $request->maker_id;
             $wine->save();
             return redirect()->route('wine.index');
         }//
@@ -87,7 +89,8 @@ class WineController extends Controller
     public function edit($id)
     {
         $wine = \App\Wine::find($id);
-        return view('wine.edit', compact('wine'));//
+        $makers = \App\Maker::all();
+        return view('wine.edit', compact('wine', 'makers'));//
     }
 
     /**
@@ -115,6 +118,7 @@ class WineController extends Controller
             $wine->kind = $request->kind;
             $wine->type = $request->type;
             $wine->area = $request->area;
+            $wine->maker_id = $request->maker_id;
             $wine->save();
             return redirect()->route('wine.index');
         }//

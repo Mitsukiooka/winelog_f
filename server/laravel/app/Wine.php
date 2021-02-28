@@ -13,7 +13,8 @@ class Wine extends Model
         'country',
         'kind',
         'type',
-        'image_file'
+        'image_file',
+        'maker_id'
     ];
 
     Public function maker()
