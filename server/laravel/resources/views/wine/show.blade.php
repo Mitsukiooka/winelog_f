@@ -1,79 +1,44 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Wine</div>
-                <div class="card-body">
-                    @csrf
-                    <div class="form-group row">
-                        <label for="id" class="col-md-4 col-form-label text-md-right">{{ __('ID') }}</label>
-                        <div class="col-md-6 input-group-text">
-                            {{ $wine->id }}
-                        </div>
+<main id="main">
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="about-img">
+                        <img src="../../wine_images/{{ $wine->image_file }}" alt="">
                     </div>
-                    <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-                        <div class="col-md-6 input-group-text">
-                            {{ $wine->name }}
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
-                        <div class="col-md-6 input-group-text">
-                            {{ $wine->country }}
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="kind" class="col-md-4 col-form-label text-md-right">{{ __('Kind') }}</label>
-                        <div class="col-md-6 input-group-text">
-                            {{ $wine->kind }}
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Types') }}</label>
-                        <div class="col-md-6 input-group-text">
-                            {{ $wine->type }}
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="area" class="col-md-4 col-form-label text-md-right">{{ __('Area') }}</label>
-                        <div class="col-md-6 input-group-text">
-                            {{ $wine->area }}
-                        </div>
-                    </div>
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <h3>{{ $wine->name }}</h3>
+                    <ul>
+                        <li><i class="icofont-check-circled"></i>{{ $wine->country }}</li>
+                        <li><i class="icofont-check-circled"></i>{{ $wine->type }}</li>
+                        <li><i class="icofont-check-circled"></i>{{ $wine->kind }}</li>
+                        <li><i class="icofont-check-circled"></i>{{ $wine->area }}</li>
+                    </ul>
                     @if (isset($wine->maker))
-                    <div class="form-group row">
-                        <label for="maker_id" class="col-md-4 col-form-label text-md-right">{{ __('Maker') }}</label>
-                            <a href="/maker/{{ $wine->maker->id }}">{{ $wine->maker->name }}</a>
-                    </div>
+                        <a href="{{ route('maker.show', $wine->maker->id) }}">{{ $wine->maker->name }}</a>
                     @endif
-                    <div class="form-group row">
-                        <label for="image_file" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
-                        <img src="../../wine_images/{{ $wine->image_file }}" width="200px" height="200px">
-                    </div>
-                    <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
-                            <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wine.edit', $wine->id) }}'">
-                                {{ __('変更') }}
-                            </button>
-                            <form style="display:inline" action="{{ route('wine.destroy', $wine->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">
-                                    {{ __('削除') }}
-                                </button>
-                            </form>
-                            <button type="button" class="btn btn-primary" onclick="history.back()">
-                                {{ __('戻る') }}
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <div class="col-md-6 offset-md-4">
+            <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wine.edit', $wine->id) }}'">
+                {{ __('変更') }}
+            </button>
+            <form style="display:inline" action="{{ route('wine.destroy', $wine->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">
+                    {{ __('削除') }}
+                </button>
+            </form>
+            <button type="button" class="btn btn-primary" onclick="history.back()">
+                {{ __('戻る') }}
+            </button>
+        </div>
+    </section><!-- End About Section -->
+</main>
 @endsection

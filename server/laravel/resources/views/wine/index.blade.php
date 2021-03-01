@@ -17,7 +17,7 @@
             <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
                 @foreach ($wines as $wine)
                     <div class="col-lg-6 menu-item">
-                            @if (isset($wine->image_file))
+                            @if (Storage::exists('/path/to/your/directory'))
                                 <img src="../../wine_images/{{ $wine->image_file }}" class="menu-img" alt="">
                             @else
                                 <img src="../../wine_images/default_wine.jpg" class="menu-img" alt="">
