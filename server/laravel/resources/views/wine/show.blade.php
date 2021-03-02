@@ -21,12 +21,52 @@
                     <li><i class="icofont-check-circled"></i>{{ $wine->kind }}</li>
                     <li><i class="icofont-check-circled"></i>{{ $wine->area }}</li>
                 </ul>
+                <p>
+                    {{ $wine->comment }}
+                </p>
                 @if (isset($wine->maker))
                     <a href="{{ route('maker.show', $wine->maker->id) }}">{{ $wine->maker->name }}</a>
                 @endif
             </div>
         </div>
     </div>
+    <section id="why-us" class="why-us">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Your Score</h2>
+                <p>You can score this wine from edit page</p>
+            </div>
+            <div class="row">
+                @if (!empty($wine->color))
+                    <div class="col-lg-4">
+                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                        <span>Color Score</span>
+                        <h4>{{ $wine->color }} / 5</h4>
+                        </div>
+                    </div>
+                @endif
+
+                @if (!empty($wine->taste))
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                        <span>Taste Score</span>
+                        <h4>{{ $wine->taste }} / 5</h4>
+                        </div>
+                    </div>
+                @endif
+
+                @if (!empty($wine->aroma))
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box" data-aos="zoom-in" data-aos-delay="300">
+                        <span>Aroma Score</span>
+                        <h4>{{ $wine->aroma }} / 5</h4>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </section>
     <div class="col-md-6 offset-md-4">
         <button type="button" class="btn-index" onclick="location.href='{{ route('wine.edit', $wine->id) }}'">
             {{ __('変更') }}

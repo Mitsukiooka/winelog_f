@@ -63,6 +63,10 @@ class WineController extends Controller
             $wine->type = $request->type;
             $wine->area = $request->area;
             $wine->maker_id = $request->maker_id;
+            $wine->color = $request->color;
+            $wine->taste = $request->taste;
+            $wine->aroma = $request->aroma;
+            $wine->comment = $request->comment;
             $wine->save();
             return redirect()->route('wine.index');
         }//
@@ -119,6 +123,10 @@ class WineController extends Controller
             $wine->type = $request->type;
             $wine->area = $request->area;
             $wine->maker_id = $request->maker_id;
+            $wine->color = $request->color;
+            $wine->taste = $request->taste;
+            $wine->aroma = $request->aroma;
+            $wine->comment = $request->comment;
             $wine->save();
             return redirect()->route('wine.index');
         }//

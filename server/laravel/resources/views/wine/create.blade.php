@@ -31,13 +31,31 @@
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="file" name="image_file" id="image_file" placeholder="Image">
-                    <div class="validate"></div>
                     <select id="maker_id" name="maker_id">
                         @foreach($makers as $maker)
                         <option value="{{ $maker->id }}">{{ $maker->name }}</option>
                         @endforeach
                     </select>
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="number" class="form-control" name="color" id="color" placeholder="Color Score">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="number" class="form-control" name="taste" id="taste" placeholder="Taste Score">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="number" class="form-control" name="aroma" id="aroma" placeholder="Aroma Score">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="textarea" class="form-control" name="comment" id="comment" placeholder="Your Comment">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="file" name="image_file" id="image_file" placeholder="Image">
                     <div class="validate"></div>
                 </div>
             </div>
