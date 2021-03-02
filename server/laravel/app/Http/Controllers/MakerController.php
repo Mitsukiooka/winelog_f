@@ -21,7 +21,7 @@ class MakerController extends Controller
         if (!empty($name)) {
             $query->where('name', 'LIKE', "%{$name}%");
         }
-        $makers = $query->get();
+        $makers = $query->paginate(8);
         return view('maker/index', compact('makers', 'name'));
     }
 

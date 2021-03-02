@@ -24,6 +24,7 @@
                 </div>
             @endforeach
         </div>
+        {{ $makers->links('vendor.pagination.simple-default') }}
         <button type="button" class="btn-index" onclick="location.href='{{ route('maker.create') }}'">
             {{ __('追加') }}
         </button>

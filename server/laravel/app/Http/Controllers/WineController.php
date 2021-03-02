@@ -21,7 +21,7 @@ class WineController extends Controller
         if (!empty($name)) {
             $query->where('name', 'LIKE', "%{$name}%");
         }
-        $wines = $query->get();
+        $wines = $query->paginate(8);
         return view('wine/index', compact('wines', 'name'));
     }
 
