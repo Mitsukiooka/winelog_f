@@ -50,7 +50,9 @@
 </head>
 <body>
     @include('parts.header')
-    @yield('content')
+    <main id="main">
+        @yield('content')
+    </main>
 </body>
 </html>
 

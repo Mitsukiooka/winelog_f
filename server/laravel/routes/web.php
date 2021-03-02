@@ -14,13 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::resource('wine', 'wineController');
 Route::resource('maker', 'makerController');
 
-Route::get('/','WineController@index');
+Route::get('/','HomeController@index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
