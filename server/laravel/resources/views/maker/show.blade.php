@@ -6,7 +6,11 @@
         <div class="row">
             <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="about-img">
-                    <img src="../../maker_images/{{ $maker->image_file }}" alt="">
+                    @if (!empty($maker->image_file))
+                        <img src="../../maker_images/{{ $maker->image_file }}" alt="">
+                    @else
+                        <img src="../../maker_images/default_maker.jpg" class="menu-img" alt="">
+                    @endif
                 </div>
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">

@@ -16,17 +16,17 @@
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
             @foreach ($wines as $wine)
                 <div class="col-lg-6 menu-item">
-                        @if (Storage::exists('/path/to/your/directory'))
-                            <img src="../../wine_images/{{ $wine->image_file }}" class="menu-img" alt="">
-                        @else
-                            <img src="../../wine_images/default_wine.jpg" class="menu-img" alt="">
-                        @endif
-                        <div class="menu-content">
-                            <a href="{{ route('wine.show', $wine->id) }}">{{ $wine->name }}</a><span>{{ $wine->country }}</span>
-                        </div>
-                        <div class="menu-ingredients">
-                            <p>{{ $wine->kind }}</P>
-                        </div>
+                    @if (!empty($wine->image_file))
+                        <img src="../../wine_images/{{ $wine->image_file }}" class="menu-img" alt="">
+                    @else
+                        <img src="../../wine_images/default_wine.jpg" class="menu-img" alt="">
+                    @endif
+                    <div class="menu-content">
+                        <a href="{{ route('wine.show', $wine->id) }}">{{ $wine->name }}</a><span>{{ $wine->country }}</span>
+                    </div>
+                    <div class="menu-ingredients">
+                        <p>{{ $wine->kind }}</P>
+                    </div>
                 </div>
             @endforeach
         </div>

@@ -17,7 +17,11 @@
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
             @foreach ($makers as $maker)
                 <div class="col-lg-6 menu-item">
-                    <img src="../../maker_images/{{ $maker->image_file }}" class="menu-img" alt="">
+                    @if (!empty($maker->image_file))
+                        <img src="../../maker_images/{{ $maker->image_file }}" class="menu-img" alt="">
+                    @else
+                        <img src="../../maker_images/default_maker.jpg" class="menu-img" alt="">
+                    @endif
                     <div class="menu-content">
                         <a href="{{ route('maker.show', $maker->id) }}">{{ $maker->name }}</a><span>{{ $maker->country }}</span>
                     </div>
