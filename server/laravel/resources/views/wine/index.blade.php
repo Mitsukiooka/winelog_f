@@ -7,12 +7,12 @@
             <h2>Wine Index</h2>
             <p>Check Your Wine Collection</p>
         </div>
-        <form class="form-inline my-2 my-lg-0 ml-2">
-            <div class="form-group">
-            <input type="text" class="form-control" name="name" value="{{ $name }}">
-            </div>
-            <input type="submit" value="検索" class="btn btn-info">
-        </form>
+        <div class="col-lg-4 col-md-6 footer-newsletter">
+            <form>
+                <input type="text" name="name" value="{{ $name }}">
+                <input type="submit" value="検索">
+            </form>
+        </div>
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
             @foreach ($wines as $wine)
                 <div class="col-lg-6 menu-item">
@@ -30,7 +30,7 @@
                 </div>
             @endforeach
         </div>
-        <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wine.create') }}'">
+        <button type="button" class="btn-index" onclick="location.href='{{ route('wine.create') }}'">
             {{ __('追加') }}
         </button>
     </div>

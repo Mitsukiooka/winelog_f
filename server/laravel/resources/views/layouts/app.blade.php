@@ -27,6 +27,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/common.css') }}" rel="stylesheet">
 
 
 
@@ -50,9 +51,8 @@
 </head>
 <body>
     @include('parts.header')
-    <main id="main">
-        @yield('content')
-    </main>
+    @yield('content')
+    @include('parts.footer')
 </body>
 </html>
 

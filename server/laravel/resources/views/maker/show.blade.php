@@ -24,17 +24,17 @@
         </div>
     </div>
     <div class="col-md-6 offset-md-4">
-        <button type="button" class="btn btn-primary" onclick="location.href='{{ route('maker.edit', $maker->id) }}'">
+        <button type="button" class="btn-index" onclick="location.href='{{ route('maker.edit', $maker->id) }}'">
             {{ __('変更') }}
         </button>
         <form style="display:inline" action="{{ route('maker.destroy', $maker->id) }}" method="post">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">
+            <button type="submit" class="btn-index">
                 {{ __('削除') }}
             </button>
         </form>
-        <button type="button" class="btn btn-primary" onclick="history.back()">
+        <button type="button" class="btn-index" onclick="history.back()">
             {{ __('戻る') }}
         </button>
     </div>
