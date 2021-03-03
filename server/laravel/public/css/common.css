@@ -34,6 +34,6 @@
   border-radius: 50px;
 }
 
-ul .pagination {
-  
+.pagination a{
+  margin: 5px;
 }
