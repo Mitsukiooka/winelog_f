@@ -24,7 +24,11 @@
             </form>
           </li>
           <li class="book-a-table text-center">
-            <a href="#">{{ Auth::user()->name }}</a>
+            @if (empty(Auth::user()->load('profile')->profile))
+              <a href="{{ route('profile.create') }}">{{ Auth::user()->name }}</a>
+            @else
+              <a href="{{ route('profile.show', Auth::user()->id) }}">{{ Auth::user()->name }}</a>
+            @endif
           </li>
         @endguest
       </ul>
