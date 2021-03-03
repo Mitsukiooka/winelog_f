@@ -16,13 +16,16 @@
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                 <h3>{{ $maker->name }}</h3>
                 <ul>
-                    <li><i class="icofont-check-circled"></i>{{ $maker->country }}</li>
+                    <li><i class="icofont-world"></i>{{ $maker->country }}</li>
                 </ul>
                 <ul>
                 @if (isset($maker->wines))
-                    @foreach ($maker->wines as $wine)
-                        <li><a href="{{ route('wine.show', $wine->id) }}">{{ $wine->name }}</a>
-                    @endforeach
+                    <div>
+                        <i class="icofont-glass"></i><span>生産ワイン一覧</span>
+                        @foreach ($maker->wines as $wine)
+                            <li><a href="{{ route('wine.show', $wine->id) }}">{{ $wine->name }}</a>
+                        @endforeach
+                    </div>
                 @endif
             </div>
         </div>

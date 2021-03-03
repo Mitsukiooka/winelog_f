@@ -16,16 +16,19 @@
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                 <h3>{{ $wine->name }}</h3>
                 <ul>
-                    <li><i class="icofont-check-circled"></i>{{ $wine->country }}</li>
-                    <li><i class="icofont-check-circled"></i>{{ $wine->type }}</li>
-                    <li><i class="icofont-check-circled"></i>{{ $wine->kind }}</li>
-                    <li><i class="icofont-check-circled"></i>{{ $wine->area }}</li>
+                    <li><i class="icofont-world"></i>{{ $wine->country }}</li>
+                    <li><i class="icofont-hill"></i>{{ $wine->area }}</li>
+                    <li><i class="icofont-grapes"></i>{{ $wine->type }}</li>
+                    <li><i class="icofont-glass"></i>{{ $wine->kind }}</li>
                 </ul>
-                <p>
+                <div class='wine-comment'>
                     {{ $wine->comment }}
-                </p>
+                </div>
                 @if (isset($wine->maker))
-                    <a href="{{ route('maker.show', $wine->maker->id) }}">{{ $wine->maker->name }}</a>
+                    <div>
+                        <i class="icofont-waiter"></i>
+                        <a href="{{ route('maker.show', $wine->maker->id) }}">{{ $wine->maker->name }}</a>
+                    </div>
                 @endif
             </div>
         </div>

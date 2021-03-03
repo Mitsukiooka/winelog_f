@@ -34,6 +34,10 @@
   border-radius: 50px;
 }
 
-.pagination a{
+.pagination a {
   margin: 5px;
+}
+
+.wine-comment {
+  width: 50%;
 }
