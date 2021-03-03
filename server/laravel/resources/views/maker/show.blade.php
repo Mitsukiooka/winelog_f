@@ -19,7 +19,7 @@
                     <li><i class="icofont-world"></i>{{ $maker->country }}</li>
                 </ul>
                 <ul>
-                @if (isset($maker->wines))
+                @if (!empty($maker->wines))
                     <div>
                         <i class="icofont-glass"></i><span>生産ワイン一覧</span>
                         @foreach ($maker->wines as $wine)
