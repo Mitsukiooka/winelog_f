@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 
 class MakerController extends Controller
@@ -49,10 +50,10 @@ class MakerController extends Controller
         } else {
             $maker = new \App\Maker;
             if ($request->hasFile('image_file')) {
-                $file = $request->image_file;
-                $fileName = $file->getClientOriginalName();
-                $filePath = public_path('/maker_images');
-                $file->move($filePath, $fileName);
+                $image = $request->file('image_file');
+                $fileName = $image->getClientOriginalName();
+                $filePath = public_path('/maker_images/'.$fileName);
+                Image::make($image->getRealPath())->resize(540, 400)->save($filePath);
                 $maker->image_file = $fileName;
             }
             $maker->name = $request->name;
@@ -100,10 +101,10 @@ class MakerController extends Controller
         } else {
             $maker = \App\Maker::find($id);
             if ($request->hasFile('image_file')) {
-                $file = $request->image_file;
-                $fileName = $file->getClientOriginalName();
-                $filePath = public_path('/maker_images');
-                $file->move($filePath, $fileName);
+                $image = $request->file('image_file');
+                $fileName = $image->getClientOriginalName();
+                $filePath = public_path('/maker_images/'.$fileName);
+                Image::make($image->getRealPath())->resize(540, 400)->save($filePath);
                 $maker->image_file = $fileName;
             }
             $maker->name = $request->name;

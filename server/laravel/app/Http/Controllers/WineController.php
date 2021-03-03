@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 
 class WineController extends Controller
@@ -51,10 +52,10 @@ class WineController extends Controller
         } else {
             $wine = new \App\Wine;
             if ($request->hasFile('image_file')) {
-                $file = $request->image_file;
-                $fileName = $file->getClientOriginalName();
-                $filePath = public_path('/wine_images');
-                $file->move($filePath, $fileName);
+                $image = $request->file('image_file');
+                $fileName = $image->getClientOriginalName();
+                $filePath = public_path('/wine_images/'.$fileName);
+                Image::make($image->getRealPath())->resize(540, 400)->save($filePath);
                 $wine->image_file = $fileName;
             }
             $wine->name = $request->name;
@@ -111,10 +112,10 @@ class WineController extends Controller
         } else {
             $wine = \App\Wine::find($id);
             if ($request->hasFile('image_file')) {
-                $file = $request->image_file;
-                $fileName = $file->getClientOriginalName();
-                $filePath = public_path('/wine_images');
-                $file->move($filePath, $fileName);
+                $image = $request->file('image_file');
+                $fileName = $image->getClientOriginalName();
+                $filePath = public_path('/wine_images/'.$fileName);
+                Image::make($image->getRealPath())->resize(540, 400)->save($filePath);
                 $wine->image_file = $fileName;
             }
             $wine->name = $request->name;
