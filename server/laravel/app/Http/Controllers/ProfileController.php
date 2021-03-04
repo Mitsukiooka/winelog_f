@@ -38,9 +38,11 @@ class ProfileController extends Controller
                 $image = $request->file('image_file');
                 $fileName = $image->getClientOriginalName();
                 $filePath = public_path('/profile_images/'.$fileName);
-                Image::make($image->getRealPath())->resize(350, 350)->save($filePath);
+                Image::make($image->getRealPath())->resize(540, 350)->save($filePath);
                 $profile->image_file = $fileName;
             }
+            $profile->favoriteWine = $request->favoriteWine;
+            $profile->favoriteMaker = $request->favoriteMaker;
             $profile->twitter = $request->twitter;
             $profile->instagram = $request->instagram;
             $profile->facebook = $request->facebook;
@@ -91,9 +93,11 @@ class ProfileController extends Controller
                 $image = $request->file('image_file');
                 $fileName = $image->getClientOriginalName();
                 $filePath = public_path('/profile_images/'.$fileName);
-                Image::make($image->getRealPath())->resize(350, 350)->save($filePath);
+                Image::make($image->getRealPath())->resize(540, 350)->save($filePath);
                 $profile->image_file = $fileName;
             }
+            $profile->favoriteWine = $request->favoriteWine;
+            $profile->favoriteMaker = $request->favoriteMaker;
             $profile->twitter = $request->twitter;
             $profile->instagram = $request->instagram;
             $profile->facebook = $request->facebook;

@@ -4,11 +4,21 @@
 <section id="book-a-table" class="book-a-table">
     <div class="container" data-aos="fade-up">
         <div class="section-title">
-            <h2>New Profile</h2>
+            <h2>Create Profile</h2>
         </div>
 
         <form action="{{ route('profile.store') }}" method="post" enctype='multipart/form-data' role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
         @csrf
+            <div class="form-row">
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="text" name="favoriteWine" class="form-control" id="favoriteWine" placeholder="Your Favorite Wine">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="text" class="form-control" name="favoriteMaker" id="favoriteMaker" placeholder="Your Favorite Maker">
+                    <div class="validate"></div>
+                </div>
+            </div>
             <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
                     <input type="text" name="twitter" class="form-control" id="twitter" placeholder="Twitter">

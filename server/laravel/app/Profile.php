@@ -13,7 +13,9 @@ class Profile extends Model
         'twitter',
         'instagram',
         'facebook',
-        'image_file'
+        'image_file',
+        'favoriteWine',
+        'favoriteMaker'
     ];
 
     Public function user()
