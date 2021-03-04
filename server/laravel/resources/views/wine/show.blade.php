@@ -38,13 +38,13 @@
 
             <div class="section-title">
                 <h2>Your Score</h2>
-                <p>You can score this wine from edit page</p>
+                <p>ワイン評価</p>
             </div>
             <div class="row">
                 @if (!empty($wine->color))
                     <div class="col-lg-4">
                         <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                        <span>Color Score</span>
+                        <span>色味</span>
                         <h4>{{ $wine->color }} / 5</h4>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                 @if (!empty($wine->taste))
                     <div class="col-lg-4 mt-4 mt-lg-0">
                         <div class="box" data-aos="zoom-in" data-aos-delay="200">
-                        <span>Taste Score</span>
+                        <span>味</span>
                         <h4>{{ $wine->taste }} / 5</h4>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                 @if (!empty($wine->aroma))
                     <div class="col-lg-4 mt-4 mt-lg-0">
                         <div class="box" data-aos="zoom-in" data-aos-delay="300">
-                        <span>Aroma Score</span>
+                        <span>香り</span>
                         <h4>{{ $wine->aroma }} / 5</h4>
                         </div>
                     </div>

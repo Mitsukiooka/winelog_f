@@ -39,15 +39,15 @@
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="number" class="form-control" name="color" id="color" placeholder="Color Score">
+                    <input type="number" class="form-control" name="color" id="color" min="1" max="5" placeholder="Color Score">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="number" class="form-control" name="taste" id="taste" placeholder="Taste Score">
+                    <input type="number" class="form-control" name="taste" id="taste" min="1" max="5" placeholder="Taste Score">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="number" class="form-control" name="aroma" id="aroma" placeholder="Aroma Score">
+                    <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" placeholder="Aroma Score">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">

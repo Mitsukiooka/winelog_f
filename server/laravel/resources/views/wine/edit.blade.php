@@ -40,15 +40,15 @@
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="number" class="form-control" name="color" id="color" value="{{ $wine->color }}">
+                    <input type="number" class="form-control" name="color" id="color" min="1" max="5" value="{{ $wine->color }}">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="number" class="form-control" name="taste" id="taste" value="{{ $wine->taste }}">
+                    <input type="number" class="form-control" name="taste" id="taste" min="1" max="5" value="{{ $wine->taste }}">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="number" class="form-control" name="aroma" id="aroma" value="{{ $wine->aroma }}">
+                    <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" value="{{ $wine->aroma }}">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
@@ -58,7 +58,7 @@
             </div>
             <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
-                    <textarea class="form-control" name="comment" id="comment" value="{{ $wine->comment }}"></textarea>
+                    <textarea class="form-control" name="comment" id="comment">{{ $wine->comment }}</textarea>
                     <div class="validate"></div>
                 </div>
             </div>
