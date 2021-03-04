@@ -22,6 +22,9 @@ RUN docker-php-ext-configure \
     gd --with-freetype-dir=/usr/include --with-png-dir=/usr/include --with-jpeg-dir=/usr/include
 RUN docker-php-ext-install pdo_mysql zip gd 
 
+RUN apt-get update && apt-get -y install vim
+
+
 #Composer install
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
