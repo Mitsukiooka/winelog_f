@@ -11,15 +11,19 @@
         @csrf
             <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="生産者名" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" class="form-control" name="country" id="country" placeholder="Country">
+                    <input type="text" class="form-control" name="country" id="country" placeholder="出身国">
                     <div class="validate"></div>
                 </div>
+            </div>
+            <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="file" name="image_file" id="image_file" placeholder="Image">
+                    <label>
+                        <input type="file" name="image_file" id="image_file">画像をアップロード
+                    </label>
                     <div class="validate"></div>
                 </div>
             </div>

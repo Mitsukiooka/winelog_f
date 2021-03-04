@@ -19,8 +19,12 @@
                     <input type="text" class="form-control" name="country" id="country" value="{{ $maker->country }}"  placeholder="Country">
                     <div class="validate"></div>
                 </div>
+            </div>
+            <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="file" name="image_file" id="image_file" placeholder="Image">
+                    <label>
+                        <input type="file" name="image_file" id="image_file">画像をアップロード
+                    </label>
                     <div class="validate"></div>
                 </div>
             </div>

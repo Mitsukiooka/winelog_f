@@ -11,26 +11,46 @@
         @csrf
             <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="ワイン名" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" class="form-control" name="country" id="country" placeholder="Country">
+                    <input type="text" class="form-control" name="country" id="country" placeholder="生産国">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" class="form-control" name="kind" id="kind" placeholder="Kind">
+                    <input type="text" class="form-control" name="kind" id="kind" placeholder="種類">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" name="type" class="form-control" id="type" placeholder="Type">
+                    <input type="text" name="type" class="form-control" id="type" placeholder="ブドウ品種">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" class="form-control" name="area" id="area" placeholder="Area">
+                    <input type="text" class="form-control" name="area" id="area" placeholder="生産地">
+                    <div class="validate"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="number" class="form-control" name="color" id="color" min="1" max="5" placeholder="色味">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
+                    <input type="number" class="form-control" name="taste" id="taste" min="1" max="5" placeholder="味">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" placeholder="香り">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <textarea class="form-control" name="comment" id="comment" placeholder="評価"></textarea>
+                    <div class="validate"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-lg-4 col-md-6 wine-maker select-box">
                     <select id="maker_id" name="maker_id">
                         @foreach($makers as $maker)
                         <option value="{{ $maker->id }}">{{ $maker->name }}</option>
@@ -39,25 +59,9 @@
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="number" class="form-control" name="color" id="color" min="1" max="5" placeholder="Color Score">
-                    <div class="validate"></div>
-                </div>
-                <div class="col-lg-4 col-md-6 form-group">
-                    <input type="number" class="form-control" name="taste" id="taste" min="1" max="5" placeholder="Taste Score">
-                    <div class="validate"></div>
-                </div>
-                <div class="col-lg-4 col-md-6 form-group">
-                    <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" placeholder="Aroma Score">
-                    <div class="validate"></div>
-                </div>
-                <div class="col-lg-4 col-md-6 form-group">
-                    <input type="file" name="image_file" id="image_file" placeholder="Image">
-                    <div class="validate"></div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-lg-4 col-md-6 form-group">
-                    <textarea class="form-control" name="comment" id="comment" placeholder="Your Comment"></textarea>
+                    <label>
+                        <input type="file" name="image_file" id="image_file">画像をアップロード
+                    </label>
                     <div class="validate"></div>
                 </div>
             </div>

@@ -34,7 +34,9 @@
             <div class="validate"></div>
           </div>
           <div class="col-lg-4 col-md-6 form-group">
-            <input type="file" name="image_file" id="image_file">
+            <label>
+              <input type="file" name="image_file" id="image_file">画像をアップロード
+            </label>
             <div class="validate"></div>
           </div>
         </div>
@@ -48,7 +50,7 @@
             <button type="submit" class="btn btn-primary" name='action' value='add'>
               {{ __('更新') }}
             </button>
-            <button type="submit" class="btn btn-primary" name='action' value='back'>
+            <button type="submit" class="btn btn-primary" name='action' onclick="location.href='{{ route('profile.show', $profile->id) }}'">
               {{ __('戻る') }}
             </button>
           </div>

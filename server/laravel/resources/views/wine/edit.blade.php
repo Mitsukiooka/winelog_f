@@ -32,14 +32,6 @@
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <select id="maker_id" name="maker_id">
-                        @foreach($makers as $maker)
-                        <option value="{{ $maker->id }}">{{ $maker->name }}</option>
-                        @endforeach
-                    </select>
-                    <div class="validate"></div>
-                </div>
-                <div class="col-lg-4 col-md-6 form-group">
                     <input type="number" class="form-control" name="color" id="color" min="1" max="5" value="{{ $wine->color }}">
                     <div class="validate"></div>
                 </div>
@@ -52,13 +44,23 @@
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="file" name="image_file" id="image_file" placeholder="Image">
+                    <textarea class="form-control" name="comment" id="comment">{{ $wine->comment }}</textarea>
                     <div class="validate"></div>
                 </div>
             </div>
             <div class="form-row">
+                <div class="col-lg-4 col-md-6 wine-maker select-box">
+                    <select id="maker_id" name="maker_id">
+                        @foreach($makers as $maker)
+                        <option value="{{ $maker->id }}">{{ $maker->name }}</option>
+                        @endforeach
+                    </select>
+                    <div class="validate"></div>
+                </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <textarea class="form-control" name="comment" id="comment">{{ $wine->comment }}</textarea>
+                    <label>
+                        <input type="file" name="image_file" id="image_file">画像をアップロード
+                    </label>
                     <div class="validate"></div>
                 </div>
             </div>

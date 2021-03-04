@@ -41,3 +41,66 @@
 .wine-comment {
   width: 50%;
 }
+
+.wine-maker {
+  overflow: hidden;
+	width: 90%;
+	margin: 2em auto;
+	text-align: center;
+}
+
+.wine-maker select {
+  width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.wine-maker select::-ms-expand {
+  display: none;
+}
+
+.wine-maker.select-box {
+	position: relative;
+	border-radius: 2px;
+	border: 2px solid #bab3a6;
+	background: #0D0B09;
+}
+.wine-maker.select-box::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.8em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #bab3a6;
+	pointer-events: none;
+}
+.wine-maker.select-box select {
+	padding: 8px 38px 8px 8px;
+	color: #bab3a6;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  padding: 10px 40px;
+  color: #ffffff;
+  background-color: #d3af71;
+  cursor: pointer;
+  margin-top: 10%;
+}
+

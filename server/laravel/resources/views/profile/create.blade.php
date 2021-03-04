@@ -11,11 +11,11 @@
         @csrf
             <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" name="favoriteWine" class="form-control" id="favoriteWine" placeholder="Your Favorite Wine">
+                    <input type="text" name="favoriteWine" class="form-control" id="favoriteWine" placeholder="お気に入りのワイン">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" class="form-control" name="favoriteMaker" id="favoriteMaker" placeholder="Your Favorite Maker">
+                    <input type="text" class="form-control" name="favoriteMaker" id="favoriteMaker" placeholder="お気に入りの生産者">
                     <div class="validate"></div>
                 </div>
             </div>
@@ -33,7 +33,9 @@
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="file" name="image_file" id="image_file" placeholder="Image">
+                    <label>
+                        <input type="file" name="image_file" id="image_file">画像をアップロード
+                    </label>
                     <div class="validate"></div>
                 </div>
             </div>
@@ -46,9 +48,6 @@
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary" name='action' value='add'>
                         {{ __('追加') }}
-                    </button>
-                    <button type="submit" class="btn btn-primary" name='action' value='back'>
-                        {{ __('戻る') }}
                     </button>
                 </div>
             </div>
