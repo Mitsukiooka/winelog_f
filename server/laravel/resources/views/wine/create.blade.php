@@ -51,11 +51,13 @@
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="textarea" class="form-control" name="comment" id="comment" placeholder="Your Comment">
+                    <input type="file" name="image_file" id="image_file" placeholder="Image">
                     <div class="validate"></div>
                 </div>
+            </div>
+            <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="file" name="image_file" id="image_file" placeholder="Image">
+                    <textarea class="form-control" name="comment" id="comment" placeholder="Your Comment"></textarea>
                     <div class="validate"></div>
                 </div>
             </div>
