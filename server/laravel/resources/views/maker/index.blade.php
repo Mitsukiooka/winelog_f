@@ -18,7 +18,7 @@
             @foreach ($makers as $maker)
                 <div class="col-lg-6 menu-item">
                     @if (!empty($maker->image_file))
-                        <img src="{{ Storage::url($maker->image_file) }}.jpg" class="menu-img" alt="">
+                        <img src="{{ $maker->image_file }}.jpg" class="menu-img" alt="">
                     @else
                         <img src="../../maker_images/default_maker.jpg" class="menu-img" alt="">
                     @endif
