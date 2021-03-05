@@ -36,8 +36,8 @@ class ProfileController extends Controller
             $profile = new \App\Profile;
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
-                $resize = Image::make($image->getRealPath())->resize(540, 350);
-                $path = Storage::disk('s3')->putFile('profile_images/', $resize, 'public');
+                // $resize = Image::make($image->getRealPath())->resize(540, 350);
+                $path = Storage::disk('s3')->putFile('profile_images/', $image, 'public');
                 $maker->image_file = Storage::disk('s3')->url($path);
             }
             $profile->favoriteWine = $request->favoriteWine;
