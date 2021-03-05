@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use File;
 
 
 class MakerController extends Controller
@@ -53,7 +52,7 @@ class MakerController extends Controller
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
                 $resize = Image::make($image)->resize(540, 400);
-                $path = Storage::disk('s3')->putFile('/', new File($resize), 'public');
+                $path = Storage::disk('s3')->putFile('/', $resize, 'public');
                 $maker->image_file = Storage::disk('s3')->url($path);
             }
             $maker->name = $request->name;
