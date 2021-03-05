@@ -59,7 +59,7 @@ class MakerController extends Controller
                     ->resize(540, 400, function ($constraint) { $constraint->aspectRatio(); } )
                     ->encode('jpg',80);
 
-                Storage::disk('s3')->putFile('photo.mywinelogbucket', $image);
+                Storage::disk('s3')->putFile('maker_images', $image);
             }
             $maker->name = $request->name;
             $maker->country = $request->country;
