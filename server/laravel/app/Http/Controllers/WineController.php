@@ -53,10 +53,9 @@ class WineController extends Controller
             $wine = new \App\Wine;
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
-                $fileName = $image->getClientOriginalName();
-                $filePath = public_path('/wine_images/'.$fileName);
-                Image::make($image->getRealPath())->resize(540, 400)->save($filePath);
-                $wine->image_file = $fileName;
+                $resize = Image::make($image->getRealPath())->resize(540, 400);
+                $path = Storage::disk('s3')->putFile('wine_images/', $resize, 'public');
+                $maker->image_file = Storage::disk('s3')->url($path);
             }
             $wine->name = $request->name;
             $wine->country = $request->country;
@@ -113,10 +112,9 @@ class WineController extends Controller
             $wine = \App\Wine::find($id);
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
-                $fileName = $image->getClientOriginalName();
-                $filePath = public_path('/wine_images/'.$fileName);
-                Image::make($image->getRealPath())->resize(540, 400)->save($filePath);
-                $wine->image_file = $fileName;
+                $resize = Image::make($image->getRealPath())->resize(540, 400);
+                $path = Storage::disk('s3')->putFile('wine_images/', $resize, 'public');
+                $maker->image_file = Storage::disk('s3')->url($path);
             }
             $wine->name = $request->name;
             $wine->country = $request->country;

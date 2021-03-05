@@ -36,10 +36,9 @@ class ProfileController extends Controller
             $profile = new \App\Profile;
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
-                $fileName = $image->getClientOriginalName();
-                $filePath = public_path('/profile_images/'.$fileName);
-                Image::make($image->getRealPath())->resize(540, 350)->save($filePath);
-                $profile->image_file = $fileName;
+                $resize = Image::make($image->getRealPath())->resize(540, 350);
+                $path = Storage::disk('s3')->putFile('profile_images/', $resize, 'public');
+                $maker->image_file = Storage::disk('s3')->url($path);
             }
             $profile->favoriteWine = $request->favoriteWine;
             $profile->favoriteMaker = $request->favoriteMaker;
@@ -91,10 +90,9 @@ class ProfileController extends Controller
             $profile = \App\Profile::find($id);
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
-                $fileName = $image->getClientOriginalName();
-                $filePath = public_path('/profile_images/'.$fileName);
-                Image::make($image->getRealPath())->resize(540, 350)->save($filePath);
-                $profile->image_file = $fileName;
+                $resize = Image::make($image->getRealPath())->resize(540, 350);
+                $path = Storage::disk('s3')->putFile('profile_images/', $resize, 'public');
+                $maker->image_file = Storage::disk('s3')->url($path);
             }
             $profile->favoriteWine = $request->favoriteWine;
             $profile->favoriteMaker = $request->favoriteMaker;
