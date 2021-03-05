@@ -54,7 +54,7 @@ class WineController extends Controller
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
                 $fileName = $image->getClientOriginalName();
-                $filePath = storage_path('/wine_images/'.$fileName);
+                $filePath = storage_path('app/wine_images/'.$fileName);
                 Image::make($image->getRealPath())->resize(540, 400)->save($filePath);
                 $wine->image_file = $fileName;
             }
@@ -114,7 +114,7 @@ class WineController extends Controller
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
                 $fileName = $image->getClientOriginalName();
-                $filePath = storage_path('/wine_images/'.$fileName);
+                $filePath = storage_path('app/wine_images/'.$fileName);
                 Image::make($image->getRealPath())->resize(540, 400)->save($filePath);
                 $wine->image_file = $fileName;
             }
