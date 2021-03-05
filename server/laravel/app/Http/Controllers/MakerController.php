@@ -51,7 +51,7 @@ class MakerController extends Controller
             $maker = new \App\Maker;
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
-                $tmpPath = storage_path('app/tmp/');
+                $tmpPath = storage_path('app/public/');
                 $resize = Image::make($image)
                 ->resize(540, 400)
                 ->save($tmpPath);
