@@ -54,7 +54,7 @@ class MakerController extends Controller
                 // $imageResize = Image::make($image->getRealPath())->resize(540, 400);
                 $path   = $request->file('image_file');
                 $resize = Image::make($path)->resize(540, 400);
-                $filePath = Storage::disk('s3')->putFile('mywinelogbucket', $resize, 'maker_images');
+                $filePath = Storage::disk('s3')->putFile('maker_images', new File($resize), 'public');
                 $maker->image_file = Storage::disk('s3')->url($filePath);
             }
             $maker->name = $request->name;
