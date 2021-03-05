@@ -37,7 +37,7 @@ class ProfileController extends Controller
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
                 $fileName = $image->getClientOriginalName();
-                $filePath = storage_path('/profile_images/'.$fileName);
+                $filePath = public_path('/profile_images/'.$fileName);
                 Image::make($image->getRealPath())->resize(540, 350)->save($filePath);
                 $profile->image_file = $fileName;
             }
@@ -92,7 +92,7 @@ class ProfileController extends Controller
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
                 $fileName = $image->getClientOriginalName();
-                $filePath = storage_path('/profile_images/'.$fileName);
+                $filePath = public_path('/profile_images/'.$fileName);
                 Image::make($image->getRealPath())->resize(540, 350)->save($filePath);
                 $profile->image_file = $fileName;
             }
