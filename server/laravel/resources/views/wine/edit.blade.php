@@ -43,6 +43,8 @@
                     <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" value="{{ $wine->aroma }}">
                     <div class="validate"></div>
                 </div>
+            </div>
+            <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
                     <textarea class="form-control" name="comment" id="comment">{{ $wine->comment }}</textarea>
                     <div class="validate"></div>
