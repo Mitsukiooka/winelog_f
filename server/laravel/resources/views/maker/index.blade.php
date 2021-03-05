@@ -20,7 +20,7 @@
                     @if (!empty($maker->image_file))
                         <img src="{{ $maker->image_file }}" class="menu-img" alt="">
                     @else
-                        <img src="../../maker_images/default_maker.jpg" class="menu-img" alt="">
+                        <img src="../img/default_maker.jpg" class="menu-img" alt="">
                     @endif
                     <div class="menu-content">
                         <a href="{{ route('maker.show', $maker->id) }}">{{ $maker->name }}</a><span>{{ $maker->country }}</span>

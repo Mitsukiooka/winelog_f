@@ -52,10 +52,12 @@ class WineController extends Controller
         } else {
             $wine = new \App\Wine;
             if ($request->hasFile('image_file')) {
-                $image = $request->file('image_file');
-                // $resize = Image::make($image->getRealPath())->resize(540, 400);
-                $path = Storage::disk('s3')->putFile('/', $image, 'public');
-                $wine->image_file = Storage::disk('s3')->url($path);
+                $file = $request->file('image_file');
+                $extension = $request->file('image_file')->getClientOriginalExtension(); 
+                $filename = $request->file('image_file')->getClientOriginalName(); 
+                $resize_img = Image::make($file)->resize(540, 400)->encode($extension); 
+                $path = Storage::disk('s3')->put(config('filesystems.s3.url').$filename, (string)$resize_img, 'public'); 
+                $wine->image_file = Storage::disk('s3')->url($filename);
             }
             $wine->name = $request->name;
             $wine->country = $request->country;
@@ -111,10 +113,12 @@ class WineController extends Controller
         } else {
             $wine = \App\Wine::find($id);
             if ($request->hasFile('image_file')) {
-                $image = $request->file('image_file');
-                // $resize = Image::make($image->getRealPath())->resize(540, 400);
-                $path = Storage::disk('s3')->putFile('/', $image, 'public');
-                $wine->image_file = Storage::disk('s3')->url($path);
+                $file = $request->file('image_file');
+                $extension = $request->file('image_file')->getClientOriginalExtension(); 
+                $filename = $request->file('image_file')->getClientOriginalName(); 
+                $resize_img = Image::make($file)->resize(540, 400)->encode($extension); 
+                $path = Storage::disk('s3')->put(config('filesystems.s3.url').$filename, (string)$resize_img, 'public'); 
+                $wine->image_file = Storage::disk('s3')->url($filename);
             }
             $wine->name = $request->name;
             $wine->country = $request->country;

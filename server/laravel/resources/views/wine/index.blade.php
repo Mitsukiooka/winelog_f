@@ -19,7 +19,7 @@
                     @if (!empty($wine->image_file))
                         <img src="{{ $wine->image_file }}" class="menu-img" alt="">
                     @else
-                        <img src="../../wine_images/default_wine.jpg" class="menu-img" alt="">
+                        <img src="../img/default_wine.jpg" class="menu-img" alt="">
                     @endif
                     <div class="menu-content">
                         <a href="{{ route('wine.show', $wine->id) }}">{{ $wine->name }}</a><span>{{ $wine->country }}</span>

@@ -9,7 +9,7 @@
                     @if (!empty($wine->image_file))
                         <img src="{{ $wine->image_file }}" alt="">
                     @else
-                        <img src="../../wine_images/default_wine.jpg" class="menu-img" alt="">
+                        <img src="../img/default_wine.jpg" class="menu-img" alt="">
                     @endif
                 </div>
             </div>

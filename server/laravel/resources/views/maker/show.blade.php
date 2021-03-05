@@ -9,7 +9,7 @@
                     @if (!empty($maker->image_file))
                         <img src="{{ $maker->image_file }}" alt="">
                     @else
-                        <img src="../../maker_images/default_maker.jpg" class="menu-img" alt="">
+                        <img src="../img/default_maker.jpg" class="menu-img" alt="">
                     @endif
                 </div>
             </div>

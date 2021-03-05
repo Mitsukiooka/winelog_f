@@ -35,10 +35,12 @@ class ProfileController extends Controller
         } else {
             $profile = new \App\Profile;
             if ($request->hasFile('image_file')) {
-                $image = $request->file('image_file');
-                // $resize = Image::make($image->getRealPath())->resize(540, 350);
-                $path = Storage::disk('s3')->putFile('/', $image, 'public');
-                $profile->image_file = Storage::disk('s3')->url($path);
+                $file = $request->file('image_file');
+                $extension = $request->file('image_file')->getClientOriginalExtension(); 
+                $filename = $request->file('image_file')->getClientOriginalName(); 
+                $resize_img = Image::make($file)->resize(540, 350)->encode($extension); 
+                $path = Storage::disk('s3')->put(config('filesystems.s3.url').$filename, (string)$resize_img, 'public'); 
+                $profile->image_file = Storage::disk('s3')->url($filename);
             }
             $profile->favoriteWine = $request->favoriteWine;
             $profile->favoriteMaker = $request->favoriteMaker;
@@ -89,10 +91,12 @@ class ProfileController extends Controller
         } else {
             $profile = \App\Profile::find($id);
             if ($request->hasFile('image_file')) {
-                $image = $request->file('image_file');
-                // $resize = Image::make($image->getRealPath())->resize(540, 350);
-                $path = Storage::disk('s3')->putFile('/', $image, 'public');
-                $profile->image_file = Storage::disk('s3')->url($path);
+                $file = $request->file('image_file');
+                $extension = $request->file('image_file')->getClientOriginalExtension(); 
+                $filename = $request->file('image_file')->getClientOriginalName(); 
+                $resize_img = Image::make($file)->resize(540, 350)->encode($extension); 
+                $path = Storage::disk('s3')->put(config('filesystems.s3.url').$filename, (string)$resize_img, 'public'); 
+                $profile->image_file = Storage::disk('s3')->url($filename);
             }
             $profile->favoriteWine = $request->favoriteWine;
             $profile->favoriteMaker = $request->favoriteMaker;
