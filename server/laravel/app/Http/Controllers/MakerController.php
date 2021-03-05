@@ -51,9 +51,9 @@ class MakerController extends Controller
             $maker = new \App\Maker;
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
-                Storage::disk('s3')->putFile('maker_images/', $image);
+                $path = Storage::disk('s3')->putFile('maker_images/', $image, 'public');
                 // $imageResize = Image::make($image->getRealPath())->resize(540, 400);
-                // $maker->image_file = Storage::disk('s3')->url($filePath);
+                $maker->image_file = Storage::disk('s3')->url($path);
             }
             $maker->name = $request->name;
             $maker->country = $request->country;
