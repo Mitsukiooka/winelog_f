@@ -50,10 +50,12 @@ class MakerController extends Controller
         } else {
             $maker = new \App\Maker;
             if ($request->hasFile('image_file')) {
-                $image = $request->file('image_file');
-                $resize = Image::make($image)->resize(540, 400)->encode('jpg');
-                $path = Storage::disk('s3')->putFile('/', $resize, 'public');
+                $file = $request->file('image_file');
+                $image = Image::make($file)->resize(540, 400);
+                $path = Storage::disk('s3')->putFile('/', $resize->encode(), 'public');
                 $maker->image_file = Storage::disk('s3')->url($path);
+
+
             }
             $maker->name = $request->name;
             $maker->country = $request->country;
