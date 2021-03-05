@@ -37,7 +37,7 @@ class ProfileController extends Controller
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
                 // $resize = Image::make($image->getRealPath())->resize(540, 350);
-                $path = Storage::disk('s3')->putFile('profile_images/', $image, 'public');
+                $path = Storage::disk('s3')->putFile('/', $image, 'public');
                 $profile->image_file = Storage::disk('s3')->url($path);
             }
             $profile->favoriteWine = $request->favoriteWine;
@@ -91,7 +91,7 @@ class ProfileController extends Controller
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
                 // $resize = Image::make($image->getRealPath())->resize(540, 350);
-                $path = Storage::disk('s3')->putFile('profile_images/', $resize, 'public');
+                $path = Storage::disk('s3')->putFile('/', $image, 'public');
                 $profile->image_file = Storage::disk('s3')->url($path);
             }
             $profile->favoriteWine = $request->favoriteWine;

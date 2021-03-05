@@ -113,7 +113,7 @@ class WineController extends Controller
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
                 // $resize = Image::make($image->getRealPath())->resize(540, 400);
-                $path = Storage::disk('s3')->putFile('wine_images/', $resize, 'public');
+                $path = Storage::disk('s3')->putFile('/', $image, 'public');
                 $maker->image_file = Storage::disk('s3')->url($path);
             }
             $wine->name = $request->name;
