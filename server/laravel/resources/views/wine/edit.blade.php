@@ -31,6 +31,8 @@
                     <input type="text" class="form-control" name="area" id="area" value="{{ $wine->area }}">
                     <div class="validate"></div>
                 </div>
+            </div>
+            <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
                     <input type="number" class="form-control" name="color" id="color" min="1" max="5" value="{{ $wine->color }}">
                     <div class="validate"></div>
