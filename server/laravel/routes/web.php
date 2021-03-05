@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::resource('wine', 'wineController');
-Route::resource('maker', 'makerController');
-Route::resource('profile', 'profileController', ['only' => ['show', 'create', 'store', 'edit', 'update', 'destroy']]);
+Route::resource('wine', 'WineController');
+Route::resource('maker', 'MakerController');
+Route::resource('profile', 'ProfileController', ['only' => ['show', 'create', 'store', 'edit', 'update', 'destroy']]);
 
 Route::get('/','HomeController@index');
 Route::get('home', 'HomeController@index');
