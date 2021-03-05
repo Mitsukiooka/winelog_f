@@ -7,7 +7,7 @@
             <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="about-img">
                     @if (!empty($maker->image_file))
-                        <img src="{{ $maker->image_file }}.jpg" alt="">
+                        <img src="{{ $maker->image_file }}" alt="">
                     @else
                         <img src="../../maker_images/default_maker.jpg" class="menu-img" alt="">
                     @endif
