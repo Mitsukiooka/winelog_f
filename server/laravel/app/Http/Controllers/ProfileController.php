@@ -90,7 +90,7 @@ class ProfileController extends Controller
             $profile = \App\Profile::find($id);
             if ($request->hasFile('image_file')) {
                 $image = $request->file('image_file');
-                $resize = Image::make($image->getRealPath())->resize(540, 350);
+                // $resize = Image::make($image->getRealPath())->resize(540, 350);
                 $path = Storage::disk('s3')->putFile('profile_images/', $resize, 'public');
                 $profile->image_file = Storage::disk('s3')->url($path);
             }

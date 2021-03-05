@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-lg-6 col-md-6">
         <div class="member" data-aos="zoom-in" data-aos-delay="100">
-          <img src="../../profile_images/{{ $profile->image_file }}" class="img-fluid" alt="">
+          <img src="{{ $profile->image_file }}" class="img-fluid" alt="">
           <div class="member-info">
             <div class="member-info-content">
               <h4>{{ Auth::user()->name }}</h4>

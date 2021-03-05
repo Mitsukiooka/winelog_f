@@ -7,7 +7,7 @@
             <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="about-img">
                     @if (!empty($wine->image_file))
-                        <img src="../../wine_images/{{ $wine->image_file }}" alt="">
+                        <img src="{{ $wine->image_file }}" alt="">
                     @else
                         <img src="../../wine_images/default_wine.jpg" class="menu-img" alt="">
                     @endif

@@ -17,7 +17,7 @@
             @foreach ($wines as $wine)
                 <div class="col-lg-6 menu-item">
                     @if (!empty($wine->image_file))
-                        <img src="../../wine_images/{{ $wine->image_file }}" class="menu-img" alt="">
+                        <img src="{{ $wine->image_file }}" class="menu-img" alt="">
                     @else
                         <img src="../../wine_images/default_wine.jpg" class="menu-img" alt="">
                     @endif
