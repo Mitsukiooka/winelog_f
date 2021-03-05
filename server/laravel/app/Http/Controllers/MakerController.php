@@ -52,14 +52,10 @@ class MakerController extends Controller
             if ($request->hasFile('image_file')) {
                 // $image = $request->file('image_file');
                 // $imageResize = Image::make($image->getRealPath())->resize(540, 400);
-                // $filePath = Storage::disk('s3')->putFile('mywinelogbucket', $imageResize, 'public');
-                // $maker->image_file = Storage::disk('s3')->url($filePath);
-
-                $image = Image::make($request->file('image_file'))
-                    ->resize(540, 400, function ($constraint) { $constraint->aspectRatio(); } )
-                    ->encode('jpg',80);
-
-                Storage::disk('s3')->putFile('maker_images', $image);
+                $path   = $request->file('image_file');
+                $resize = Image::make($path)->resize(540, 400);
+                $filePath = Storage::disk('s3')->putFile('mywinelogbucket', $resize, 'maker_images');
+                $maker->image_file = Storage::disk('s3')->url($filePath);
             }
             $maker->name = $request->name;
             $maker->country = $request->country;
