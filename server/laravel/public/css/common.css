@@ -34,6 +34,16 @@
   border-radius: 50px;
 }
 
+.btn-register {
+  background: #cda45e;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
 .pagination a {
   margin: 5px;
 }
@@ -104,3 +114,6 @@ label {
   margin-top: 10%;
 }
 
+.login-label {
+  margin: 0;
+}

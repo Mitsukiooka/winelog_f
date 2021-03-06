@@ -29,15 +29,12 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="form-group row">
-                        <div class="col-md-6 offset-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                <label class="form-check-label" for="remember">
-                                    {{ __('Remember Me') }}
-                                </label>
-                            </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <label class="login-label" for="remember">
+                                {{ __('ログイン情報を保存') }}
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -50,6 +47,11 @@
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary" name='action' value='add'>
                             {{ __('ログイン') }}
+                        </button>
+                    </div>
+                    <div class="col-md-6 offset-md-4">
+                        <button type="button" class="btn-register" onclick="location.href='{{ route('register') }}'">
+                            {{ __('アカウント作成') }}
                         </button>
                     </div>
                 </div>
