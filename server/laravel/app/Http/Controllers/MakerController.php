@@ -49,7 +49,7 @@ class MakerController extends Controller
             return redirect()->route('maker.index');
         } else {
             $rules = [
-                'name' => ['required', 'string', 'unique:wines'],
+                'name' => ['required', 'string', 'unique:makers'],
             ];
             $this->validate($request, $rules);
             $maker = new \App\Maker;
