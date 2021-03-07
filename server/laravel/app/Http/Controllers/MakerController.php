@@ -48,6 +48,10 @@ class MakerController extends Controller
         if($request->action === 'back') {
             return redirect()->route('maker.index');
         } else {
+            $rules = [
+                'name' => ['required', 'string', 'unique:wines'],
+            ];
+            $this->validate($request, $rules);
             $maker = new \App\Maker;
             if ($request->hasFile('image_file')) {
                 $file = $request->file('image_file');
