@@ -27,7 +27,7 @@
             @if (empty(Auth::user()->load('profile')->profile))
               <a href="{{ route('profile.create') }}">{{ Auth::user()->name }}</a>
             @else
-              <a href="{{ route('profile.show', Auth::user()->load('profile')->profile->id }}">{{ Auth::user()->name }}</a>
+              <a href="{{ route('profile.show', Auth::user()->load('profile')->profile }}">{{ Auth::user()->name }}</a>
             @endif
           </li>
         @endguest
