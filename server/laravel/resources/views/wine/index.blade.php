@@ -5,7 +5,7 @@
     <div class="container" data-aos="fade-up">
         <div class="section-title">
             <h2>Wine Index</h2>
-            <p>Check Your Wine Collection</p>
+            <p>登録ワイン一覧</p>
         </div>
         <div class="col-lg-4 col-md-6 footer-newsletter">
             <form>
@@ -25,7 +25,8 @@
                         <a href="{{ route('wine.show', $wine->id) }}">{{ $wine->name }}</a><span>{{ $wine->country }}</span>
                     </div>
                     <div class="menu-ingredients">
-                        <p>{{ $wine->kind }}</P>
+                        <p>{{ $wine->area }}産</P>
+                        <p>{{ $wine->kind}}ワイン</p>
                     </div>
                 </div>
             @endforeach

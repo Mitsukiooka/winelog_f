@@ -50,6 +50,13 @@
 
 .wine-comment {
   width: 50%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #0D0B09;
+}
+
+.wine-comment p {
+  font-size: 16px;
 }
 
 .wine-maker {

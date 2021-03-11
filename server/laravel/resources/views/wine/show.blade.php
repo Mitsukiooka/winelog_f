@@ -16,17 +16,18 @@
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                 <h3>{{ $wine->name }}</h3>
                 <ul>
-                    <li><i class="icofont-world"></i>{{ $wine->country }}</li>
-                    <li><i class="icofont-hill"></i>{{ $wine->area }}</li>
-                    <li><i class="icofont-grapes"></i>{{ $wine->type }}</li>
-                    <li><i class="icofont-glass"></i>{{ $wine->kind }}</li>
+                    <li><i class="icofont-world"></i><span>生産国：{{ $wine->country }}</span></li>
+                    <li><i class="icofont-hill"></i><span>生産地：{{ $wine->area }}</span></li>
+                    <li><i class="icofont-grapes"></i><span>ブドウの種類：{{ $wine->type }}</span></li>
+                    <li><i class="icofont-glass"></i><span>ワインの種類：{{ $wine->kind }}ワイン</span></li>
                 </ul>
                 <div class='wine-comment'>
-                    {{ $wine->comment }}
+                    <i class="icofont-comment"></i>
+                    <p>{{ $wine->comment }}</p>
                 </div>
                 @if (isset($wine->maker))
                     <div>
-                        <i class="icofont-waiter"></i>
+                        <i class="icofont-waiter"></i><span>生産者</p>
                         <a href="{{ route('maker.show', $wine->maker->id) }}">{{ $wine->maker->name }}</a>
                     </div>
                 @endif
