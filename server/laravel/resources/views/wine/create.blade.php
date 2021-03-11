@@ -20,7 +20,7 @@
                     @enderror
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
-                    <input type="text" class="form-control" name="country" id="country" placeholder="生産国">
+                    <input type="text" class="form-control" name="country" id="country" placeholder="ワイン生産国">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">

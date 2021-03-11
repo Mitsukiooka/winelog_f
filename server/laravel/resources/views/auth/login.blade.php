@@ -11,8 +11,8 @@
             <form method="POST" action="{{ route('login') }}" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
             @csrf
                 <div class="form-row">
-                    <div class="col-lg-4 col-md-6 form-group">
-                        <input type="text" name="email" id="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror">
+                    <div class="col-lg-4 col-md-6 form-group-login">
+                        <input type="text" name="email" id="email" placeholder="メールアドレス" class="form-control @error('email') is-invalid @enderror">
                         <div class="validate"></div>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -20,8 +20,8 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="col-lg-4 col-md-6 form-group">
-                        <input type="password" name="password" id="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror">
+                    <div class="col-lg-4 col-md-6 form-group-login">
+                        <input type="password" name="password" id="password" placeholder="パスワード" class="form-control @error('password') is-invalid @enderror">
                         <div class="validate"></div>
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -29,12 +29,9 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="col-lg-4 col-md-6 form-group">
+                    <div class="col-lg-4 col-md-6 form-group-login">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <label class="login-label" for="remember">
-                                {{ __('ログイン情報を保存') }}
-                            </label>
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}><span>{{ __('ログイン情報を保存') }}</span>
                         </div>
                     </div>
                 </div>
@@ -45,14 +42,10 @@
                 </div>
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
-                        <button type="submit" class="btn btn-primary" name='action' value='add'>
+                        <button type="submit" class="btn btn-primary-login" name='action' value='add'>
                             {{ __('ログイン') }}
                         </button>
-                    </div>
-                    <div class="col-md-6 offset-md-4">
-                        <button type="button" class="btn-register" onclick="location.href='{{ route('register') }}'">
-                            {{ __('アカウント作成') }}
-                        </button>
+                        <a href="{{ route('register')  }}"><p>{{ __('アカウント作成はこちら') }}</p></a>
                     </div>
                 </div>
             </form>

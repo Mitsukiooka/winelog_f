@@ -117,3 +117,41 @@ label {
 .login-label {
   margin: 0;
 }
+
+.form-row .form-group-login {
+  display: block;
+  margin-top: 10px;
+  margin-left: 33%;
+}
+
+.form-row .form-group-login .form-check input {
+  height: 15px;
+}
+
+.form-row .form-group-login .form-check span {
+  color: #d3af71;
+  font-size: 15px;
+}
+
+.btn-primary-login {
+  margin-left: 20%;
+}
+
+.form-group p {
+  font-size: 14px;
+  margin-left: 18%;
+  margin-top: 5%;
+}
+
+@media (max-width: 767px) {
+  .form-row .form-group-login {
+    margin-left: 0;
+  }
+  .btn-primary-login {
+    margin-left: 33%;
+  }
+
+  .form-group p {
+    margin-left: 30%;
+  }
+}
