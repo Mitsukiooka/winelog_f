@@ -12,10 +12,12 @@
         @method('PUT')
             <div class="form-row">
                 <div class="col-lg-6 col-md-6 form-group">
+                <label for="name">生産者名</label>
                     <input type="text" name="name" class="form-control" id="name" value="{{ $maker->name }}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">
+                <label for="country">出身国</label>
                     <input type="text" class="form-control" name="country" id="country" value="{{ $maker->country }}"  placeholder="Country">
                     <div class="validate"></div>
                 </div>
