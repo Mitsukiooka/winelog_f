@@ -29,8 +29,10 @@
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-12">
-        <i class="icofont-glass"></i><p>{{ $profile->favoriteWine }}</p>
-        <i class="icofont-waiter"></i><p>{{ $profile->favoriteMaker }}</p>
+        <ul>
+          <i class="icofont-glass"></i><p>お気にりのワイン：{{ $profile->favoriteWine }}</p>
+          <i class="icofont-waiter"></i><p>お気にりの生産者：{{ $profile->favoriteMaker }}</p>
+        </ul>
         <button type="button" class="btn-index" onclick="location.href='{{ route('profile.edit', $profile->id) }}'">
             {{ __('更新') }}
         </button>
