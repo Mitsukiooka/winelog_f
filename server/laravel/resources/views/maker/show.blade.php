@@ -17,16 +17,13 @@
                 <h3>{{ $maker->name }}</h3>
                 <ul>
                     <li><i class="icofont-world"></i>{{ $maker->country }}</li>
-                </ul>
-                <ul>
-                @if (!empty($maker->wines))
-                    <div>
-                        <i class="icofont-glass"></i><span>生産ワイン一覧</span>
-                        @foreach ($maker->wines as $wine)
-                            <li><a href="{{ route('wine.show', $wine->id) }}">{{ $wine->name }}</a>
-                        @endforeach
-                    </div>
+                    @if (!empty($maker->wines))
+                    <i class="icofont-glass"></i><span>生産ワイン一覧</span>
+                    @foreach ($maker->wines as $wine)
+                        <li><a href="{{ route('wine.show', $wine->id) }}">{{ $wine->name }}</a><li>
+                    @endforeach
                 @endif
+                </ul>                
             </div>
         </div>
     </div>

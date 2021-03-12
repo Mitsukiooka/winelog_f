@@ -20,18 +20,19 @@
                     <li><i class="icofont-hill"></i><span>生産地：{{ $wine->area }}</span></li>
                     <li><i class="icofont-grapes"></i><span>ブドウの種類：{{ $wine->type }}</span></li>
                     <li><i class="icofont-glass"></i><span>ワインの種類：{{ $wine->kind }}ワイン</span></li>
+                    @if (isset($wine->maker))
+                        <li>
+                            <i class="icofont-waiter"></i><span>生産者：</span>
+                            <a href="{{ route('maker.show', $wine->maker->id) }}">{{ $wine->maker->name }}</a>
+                        </li>
+                    @endif
                 </ul>
-                <div class='wine-comment'>
-                    <i class="icofont-comment"></i>
-                    <p>{{ $wine->comment }}</p>
-                </div>
-                @if (isset($wine->maker))
-                    <div>
-                        <i class="icofont-waiter"></i><span>生産者</p>
-                        <a href="{{ route('maker.show', $wine->maker->id) }}">{{ $wine->maker->name }}</a>
-                    </div>
-                @endif
             </div>
+        </div>
+        <div class='wine-comment'>
+            <h4>コメント</h4>
+            <i class="icofont-comment"></i>
+            <p>{{ $wine->comment }}</p>
         </div>
     </div>
     <section id="why-us" class="why-us">

@@ -161,4 +161,8 @@ label {
   .form-group p {
     margin-left: 30%;
   }
+
+  .wine-comment {
+    width: 100%;
+  }
 }

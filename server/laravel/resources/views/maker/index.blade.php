@@ -6,7 +6,7 @@
     <div class="container" data-aos="fade-up">
         <div class="section-title">
             <h2>Maker Index</h2>
-            <p>Check Your Favorite Maker</p>
+            <p>登録生産者一覧</p>
         </div>
         <div class="col-lg-4 col-md-6 footer-newsletter">
             <form>
