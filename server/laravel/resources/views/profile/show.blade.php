@@ -7,11 +7,11 @@
 
     <div class="section-title">
       <h2>Profile</h2>
-      <p>Check Your Profile</p>
+      <p>マイページ</p>
     </div>
 
     <div class="row">
-      <div class="col-lg-6 col-md-6">
+      <div class="col-lg-12 col-md-12">
         <div class="member" data-aos="zoom-in" data-aos-delay="100">
           <img src="{{ $profile->image_file }}" class="img-fluid" alt="">
           <div class="member-info">
@@ -26,7 +26,9 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6">
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
         <i class="icofont-world"></i><p>{{ $profile->favoriteWine }}</p>
         <i class="icofont-hill"></i><p>{{ $profile->favoriteMaker }}</p>
         <button type="button" class="btn-index" onclick="location.href='{{ route('profile.edit', $profile->id) }}'">
