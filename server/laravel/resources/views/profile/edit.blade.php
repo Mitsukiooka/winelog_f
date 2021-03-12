@@ -11,7 +11,7 @@
     @csrf
     @method('PUT')
         <div class="form-row">
-          <label class="label-select" for='favoriteWine'>お気にりのワイン</label>
+          <label for='favoriteWine'>お気にりのワイン</label>
           <div class="col-lg-4 col-md-6 wine-maker select-box">
             <select id="favoriteWine" name="favoriteWine">
                 @foreach($wines as $wine)
@@ -32,18 +32,21 @@
         </div>
         <div class="form-row">
           <div class="col-lg-4 col-md-6 form-group">
+          <label for="twitter">Twitter</label>
             <input type="text" name="twitter" class="form-control" id="twitter" value="{{ $profile->twitter }}">
             <div class="validate"></div>
           </div>
           <div class="col-lg-4 col-md-6 form-group">
+          <label for="instagram">Instagram</label>
             <input type="text" class="form-control" name="instagram" id="instagram" value="{{ $profile->instagram }}">
             <div class="validate"></div>
           </div>
           <div class="col-lg-4 col-md-6 form-group">
+          <label for="facebook">Facebook</label>
             <input type="text" class="form-control" name="facebook" id="facebook" value="{{ $profile->facebook }}">
             <div class="validate"></div>
           </div>
-          <div class="col-lg-4 col-md-6 form-group">
+          <div class="col-lg-4 col-md-6 form-group-file">
             <label>
               <input type="file" name="image_file" id="image_file">画像をアップロード
             </label>
@@ -57,10 +60,12 @@
         </div>
         <div class="form-group row mb-0">
           <div class="col-md-6 offset-md-4">
-            <button type="submit" class="btn btn-primary" name='action' value='add'>
+            <button type="submit" class="btn btn-primary-login" name='action' value='add'>
               {{ __('更新') }}
             </button>
-            <button type="submit" class="btn btn-primary" name='action' onclick="location.href='{{ route('profile.show', $profile->id) }}'">
+          </div>
+          <div class="col-md-6 offset-md-4">
+            <button type="submit" class="btn btn-primary-login" name='action' onclick="location.href='{{ route('profile.show', $profile->id) }}'">
               {{ __('戻る') }}
             </button>
           </div>
