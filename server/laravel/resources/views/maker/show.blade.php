@@ -16,7 +16,7 @@
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                 <h3>{{ $maker->name }}</h3>
                 <ul>
-                    <li><i class="icofont-world"></i>{{ $maker->country }}</li>
+                    <li><i class="icofont-world"></i><span>拠点国：{{ $maker->country }}</span></li>
                     @if (!empty($maker->wines))
                     <i class="icofont-glass"></i><span>生産ワイン一覧</span>
                     @foreach ($maker->wines as $wine)

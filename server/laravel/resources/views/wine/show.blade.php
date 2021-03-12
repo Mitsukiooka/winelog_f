@@ -17,7 +17,7 @@
                 <h3>{{ $wine->name }}</h3>
                 <ul>
                     <li><i class="icofont-world"></i><span>生産国：{{ $wine->country }}</span></li>
-                    <li><i class="icofont-hill"></i><span>生産地：{{ $wine->area }}</span></li>
+                    <li><i class="icofont-hill"></i><span>生産地域：{{ $wine->area }}</span></li>
                     <li><i class="icofont-grapes"></i><span>ブドウの種類：{{ $wine->type }}</span></li>
                     <li><i class="icofont-glass"></i><span>ワインの種類：{{ $wine->kind }}ワイン</span></li>
                     @if (isset($wine->maker))
