@@ -27,12 +27,12 @@
                         </li>
                     @endif
                 </ul>
+                <div class='wine-comment'>
+                    <h4>コメント</h4>
+                    <i class="icofont-comment"></i>
+                    <p>{{ $wine->comment }}</p>
+                </div>
             </div>
-        </div>
-        <div class='wine-comment'>
-            <h4>コメント</h4>
-            <i class="icofont-comment"></i>
-            <p>{{ $wine->comment }}</p>
         </div>
     </div>
     <section id="why-us" class="why-us">
