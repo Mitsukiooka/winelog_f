@@ -11,12 +11,22 @@
     @csrf
     @method('PUT')
         <div class="form-row">
-          <div class="col-lg-4 col-md-6 form-group">
-            <input type="text" name="favoriteWine" class="form-control" id="favoriteWine" value="{{ $profile->favoriteWine }}">
+          <label class="label-select" for='favoriteWine'>お気にりのワイン</label>
+          <div class="col-lg-4 col-md-6 wine-maker select-box">
+            <select id="favoriteWine" name="favoriteWine">
+                @foreach($wines as $wine)
+                <option value="{{ $wine->name }}">{{ $wine->name }}</option>
+                @endforeach
+            </select>
             <div class="validate"></div>
           </div>
-          <div class="col-lg-4 col-md-6 form-group">
-            <input type="text" class="form-control" name="favoriteMaker" id="favoriteMaker" value="{{ $profile->favoriteMaker }}">
+          <label for='favoriteMaker'>お気にりの生産者</label>
+          <div class="col-lg-4 col-md-6 wine-maker select-box">
+            <select id="favoriteMaker" name="favoriteMaker">
+                @foreach($makers as $maker)
+                <option value="{{ $maker->name }}">{{ $maker->name }}</option>
+                @endforeach
+            </select>
             <div class="validate"></div>
           </div>
         </div>

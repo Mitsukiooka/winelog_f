@@ -11,7 +11,7 @@
             <form method="POST" action="{{ route('login') }}" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
             @csrf
                 <div class="form-row">
-                    <div class="col-lg-4 col-md-6 form-group-login">
+                    <div class="col-lg-6 col-md-6 form-group">
                         <input type="text" name="email" id="email" placeholder="メールアドレス" class="form-control @error('email') is-invalid @enderror">
                         <div class="validate"></div>
                         @error('email')
@@ -20,7 +20,7 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="col-lg-4 col-md-6 form-group-login">
+                    <div class="col-lg-6 col-md-6 form-group">
                         <input type="password" name="password" id="password" placeholder="パスワード" class="form-control @error('password') is-invalid @enderror">
                         <div class="validate"></div>
                         @error('password')

@@ -25,4 +25,9 @@ class Wine extends Model
     {
         return $this->belongsTo('\App\Maker');
     }
+
+    Public function profile()
+    {
+        return $this->belongsTo('\App\Profile');
+    }
 }

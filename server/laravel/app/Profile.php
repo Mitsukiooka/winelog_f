@@ -22,4 +22,14 @@ class Profile extends Model
     {
         return $this->belongsTo('\App\User');
     }
+
+    Public function favoriteWine() 
+    {
+        return $this->hasMany('\App\Wine');
+    }
+
+    Public function favoriteMaker()
+    {
+        return $this->hasMany('\App\Maker');
+    }
 }

@@ -11,46 +11,42 @@
         @csrf
         @method('PUT')
             <div class="form-row">
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" name="name" class="form-control" id="name" value="{{ $wine->name }}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" class="form-control" name="country" id="country" value="{{ $wine->country }}">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" class="form-control" name="kind" id="kind" value="{{ $wine->kind }}">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" name="type" class="form-control" id="type" value="{{ $wine->type }}">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" class="form-control" name="area" id="area" value="{{ $wine->area }}">
                     <div class="validate"></div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="number" class="form-control" name="color" id="color" min="1" max="5" value="{{ $wine->color }}">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="number" class="form-control" name="taste" id="taste" min="1" max="5" value="{{ $wine->taste }}">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" value="{{ $wine->aroma }}">
                     <div class="validate"></div>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="col-lg-4 col-md-6 form-group">
-                    <textarea class="form-control" name="comment" id="comment">{{ $wine->comment }}</textarea>
-                    <div class="validate"></div>
-                </div>
+            <div class="form-group">
+                <textarea class="form-control" name="comment" id="comment" rows="5">{{ $wine->comment }}</textarea>
+                <div class="validate"></div>
             </div>
             <div class="form-row">
                 <div class="col-lg-4 col-md-6 wine-maker select-box">
@@ -61,7 +57,7 @@
                     </select>
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-4 col-md-6 form-group-file">
                     <label>
                         <input type="file" name="image_file" id="image_file">画像をアップロード
                     </label>

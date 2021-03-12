@@ -10,7 +10,7 @@
         <form action="{{ route('wine.store') }}" method="post" enctype='multipart/form-data' role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
         @csrf
             <div class="form-row">
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="ワイン名" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                     <div class="validate"></div>
                     @error('name')
@@ -19,40 +19,38 @@
                         </span>
                     @enderror
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" class="form-control" name="country" id="country" placeholder="ワイン生産国">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" class="form-control" name="kind" id="kind" placeholder="種類">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" name="type" class="form-control" id="type" placeholder="ブドウ品種">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" class="form-control" name="area" id="area" placeholder="生産地">
                     <div class="validate"></div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="number" class="form-control" name="color" id="color" min="1" max="5" placeholder="色味">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="number" class="form-control" name="taste" id="taste" min="1" max="5" placeholder="味">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" placeholder="香り">
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
-                    <textarea class="form-control" name="comment" id="comment" placeholder="評価"></textarea>
-                    <div class="validate"></div>
-                </div>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="comment" id="comment" rows="5" placeholder="評価"></textarea>
+                <div class="validate"></div>
             </div>
             <div class="form-row">
                 <div class="col-lg-4 col-md-6 wine-maker select-box">
@@ -63,7 +61,7 @@
                     </select>
                     <div class="validate"></div>
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-4 col-md-6 form-group-file">
                     <label>
                         <input type="file" name="image_file" id="image_file">画像をアップロード
                     </label>

@@ -118,7 +118,6 @@ label {
   color: #ffffff;
   background-color: #d3af71;
   cursor: pointer;
-  margin-top: 10%;
 }
 
 .login-label {
@@ -128,7 +127,6 @@ label {
 .form-row .form-group-login {
   display: block;
   margin-top: 10px;
-  margin-left: 33%;
 }
 
 .form-row .form-group-login .form-check input {
@@ -142,12 +140,17 @@ label {
 
 .btn-primary-login {
   margin-left: 20%;
+  margin-top: 10px;
 }
 
 .form-group p {
   font-size: 14px;
   margin-left: 18%;
   margin-top: 5%;
+}
+
+.form-group-file {
+  margin-left: 39%;
 }
 
 @media (max-width: 767px) {
@@ -164,5 +167,9 @@ label {
 
   .wine-comment {
     width: 100%;
+  }
+
+  .form-group-file {
+    margin-left: 18%;
   }
 }

@@ -18,7 +18,9 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        return view('profile.create');//
+        $wines = \App\Wine::all();
+        $makers = \App\Maker::all();
+        return view('profile.create', compact('wines', 'makers'));//
     }
 
     /**
@@ -74,7 +76,9 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $profile = \App\Profile::find($id);
-        return view('profile.edit', compact('profile'));//
+        $wines = \App\Wine::all();
+        $makers = \App\Maker::all();
+        return view('profile.edit', compact('profile', 'wines', 'makers'));//
     }
 
     /**

@@ -11,7 +11,7 @@
             <form method="POST" action="{{ route('register') }}" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
             @csrf
                 <div class="form-row">
-                    <div class="col-lg-4 col-md-6 form-group-login">
+                    <div class="col-lg-6 col-md-6 form-group-login">
                         <input type="text" name="name" id="name" placeholder="ユーザー名" class="form-control @error('name') is-invalid @enderror" required autocomplete="name">
                         <div class="validate"></div>
                         @error('name')
@@ -20,7 +20,7 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="col-lg-4 col-md-6 form-group-login">
+                    <div class="col-lg-6 col-md-6 form-group-login">
                         <input type="text" name="email" id="email" placeholder="メールアドレス" class="form-control @error('email') is-invalid @enderror" required autocomplete="email">
                         <div class="validate"></div>
                         @error('email')
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-lg-4 col-md-6 form-group-login">
+                    <div class="col-lg-6 col-md-6 form-group-login">
                         <input type="password" name="password" id="password" placeholder="パスワード" class="form-control @error('password') is-invalid @enderror" required autocomplete="new-password">
                         <div class="validate"></div>
                         @error('password')
@@ -40,7 +40,7 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="col-lg-4 col-md-6 form-group-login">
+                    <div class="col-lg-6 col-md-6 form-group-login">
                         <input type="password" name="password_confirmation" id="password-confirm" placeholder="パスワード確認" class="form-control" required autocomplete="new-password">
                         <div class="validate"></div>
                     </div>

@@ -10,7 +10,7 @@
         <form action="{{ route('maker.store') }}" method="post" enctype='multipart/form-data' role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
         @csrf
             <div class="form-row">
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="生産者名" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                     <div class="validate"></div>
                     @error('name')
@@ -19,13 +19,11 @@
                         </span>
                     @enderror
                 </div>
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-6 col-md-6 form-group">
                     <input type="text" class="form-control" name="country" id="country" placeholder="出身国">
                     <div class="validate"></div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="col-lg-4 col-md-6 form-group">
+                <div class="col-lg-4 col-md-6 form-group-file">
                     <label>
                         <input type="file" name="image_file" id="image_file">画像をアップロード
                     </label>
@@ -39,10 +37,12 @@
             </div>
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="btn btn-primary" name='action' value='add'>
+                    <button type="submit" class="btn btn-primary-login" name='action' value='add'>
                         {{ __('追加') }}
                     </button>
-                    <button type="submit" class="btn btn-primary" name='action' value='back'>
+                </div>
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary-login" name='action' value='back'>
                         {{ __('戻る') }}
                     </button>
                 </div>

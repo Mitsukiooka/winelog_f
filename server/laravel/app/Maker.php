@@ -18,4 +18,9 @@ class Maker extends Model
     {
         return $this->hasMany('\App\Wine');
     }
+
+    Public function profile()
+    {
+        return $this->belongsTo('\App\Profile');
+    }
 }
