@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    protected $table = 'profiles';
+    protected $table = 'reviews';
     // 更新可能な項目の設定
     protected $fillable = [
         'comment',
