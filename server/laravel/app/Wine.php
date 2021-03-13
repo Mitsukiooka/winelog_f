@@ -30,4 +30,9 @@ class Wine extends Model
     {
         return $this->belongsTo('\App\User');
     }
+
+    Public function reviews()
+    {
+        return $this->hasMany('\App\Review');
+    }
 }
