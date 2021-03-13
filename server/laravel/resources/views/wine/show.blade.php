@@ -84,10 +84,33 @@
                     {{ __('削除') }}
                 </button>
             </form>
+        @else
+            <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.create', $wine->id) }}'">
+                {{ __('レビューを投稿する') }}
+            </button>
         @endif
         <button type="button" class="btn-index" onclick="history.back()">
             {{ __('戻る') }}
         </button>
     </div>
 </section><!-- End About Section -->
+<section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Wine Reviews</h2>
+            <p>レビュー一覧</p>
+        </div>
+        @foreach ($wine->reviews as $review)
+            <div class="testimonial-item">
+                <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    {{ $review->comment }}
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{{ $review->wine->image_file }}" class="testimonial-img" alt="">
+                <h3>{{ $review->user->name }}</h3>
+            </div>
+        @endforeach
+    </div>
+</section>
 @endsection

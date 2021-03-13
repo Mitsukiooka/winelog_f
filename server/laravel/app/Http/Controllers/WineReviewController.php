@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class ReviewController extends Controller
+class WineReviewController extends Controller
 {
 
     /**
@@ -27,14 +27,15 @@ class ReviewController extends Controller
      * @return \Illuminate\Http\Response
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $wine_id)
     {
         if($request->action === 'back') {
             return redirect()->route('review.create');
         } else {
+            $wine = \App\Wine::find($wine_id);
             $review = new \App\Review;
             $review->user_id = Auth::id();
-            $review->wine_id = $request->wine_id;
+            $review->wine_id = $wine->id;
             $review->comment = $request->comment;
             $review->save();
             return redirect()->route('wine.show', $review->wine_id);
