@@ -73,6 +73,7 @@ class WineController extends Controller
             $wine->taste = $request->taste;
             $wine->aroma = $request->aroma;
             $wine->comment = $request->comment;
+            $wine->user_id = Auth::id();
             $wine->save();
             return redirect()->route('wine.index');
         }//
@@ -134,6 +135,7 @@ class WineController extends Controller
             $wine->taste = $request->taste;
             $wine->aroma = $request->aroma;
             $wine->comment = $request->comment;
+            $wine->user_id = Auth::id();
             $wine->save();
             return redirect()->route('wine.index');
         }//

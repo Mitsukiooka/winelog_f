@@ -25,8 +25,8 @@
                         <a href="{{ route('wine.show', $wine->id) }}">{{ $wine->name }}</a><span>{{ $wine->country }}</span>
                     </div>
                     <div class="menu-ingredients">
-                        <p>{{ $wine->area }}産</P>
-                        <p>{{ $wine->kind}}ワイン</p>
+                        <p>{{ $wine->kind}}ワイン/{{ $wine->area }}産</p>
+                        <p>登録ユーザー：{{ $wine->user->name }}</p>
                     </div>
                 </div>
             @endforeach

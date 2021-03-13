@@ -28,8 +28,8 @@
                     @endif
                 </ul>
                 <div class='wine-comment'>
-                    <h4>コメント</h4>
-                    <i class="icofont-comment"></i>
+                    <h4>登録者によるコメント</h4>
+                    <p>登録者：{{ $wine->user->name }}</p>
                     <p>{{ $wine->comment }}</p>
                 </div>
             </div>
@@ -73,16 +73,18 @@
         </div>
     </section>
     <div class="col-md-6 offset-md-4">
-        <button type="button" class="btn-index" onclick="location.href='{{ route('wine.edit', $wine->id) }}'">
-            {{ __('変更') }}
-        </button>
-        <form style="display:inline" action="{{ route('wine.destroy', $wine->id) }}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn-index">
-                {{ __('削除') }}
+        @if ($wine->user->id == Auth::user()->id)
+            <button type="button" class="btn-index" onclick="location.href='{{ route('wine.edit', $wine->id) }}'">
+                {{ __('変更') }}
             </button>
-        </form>
+            <form style="display:inline" action="{{ route('wine.destroy', $wine->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn-index">
+                    {{ __('削除') }}
+                </button>
+            </form>
+        @endif
         <button type="button" class="btn-index" onclick="history.back()">
             {{ __('戻る') }}
         </button>

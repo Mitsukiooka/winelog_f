@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
+
+    Public function wines()
+    {
+        return $this->hasMany(Wine::class);
+    }
 }
