@@ -37,37 +37,20 @@
     </div>
     <section id="why-us" class="why-us">
         <div class="container" data-aos="fade-up">
-
             <div class="section-title">
-                <h2>Your Score</h2>
-                <p>ワイン評価</p>
+                <h2>Wine Review</h2>
+                <p>ワインレビュー</p>
             </div>
             <div class="row">
-                @if (!empty($wine->color))
-                    <div class="col-lg-4">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                        <span>色味</span>
-                        <h4>{{ $wine->color }} / 5</h4>
+                @if (!empty($wine->reviews))
+                    @foreach ($wine->reviews as $review)  
+                        <div class="col-lg-4">
+                            <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                            <span>{{ $review->user->name }}</span>
+                            <p>{{ $review->comment }}</p>
+                            </div>
                         </div>
-                    </div>
-                @endif
-
-                @if (!empty($wine->taste))
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="200">
-                        <span>味</span>
-                        <h4>{{ $wine->taste }} / 5</h4>
-                        </div>
-                    </div>
-                @endif
-
-                @if (!empty($wine->aroma))
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="300">
-                        <span>香り</span>
-                        <h4>{{ $wine->aroma }} / 5</h4>
-                        </div>
-                    </div>
+                    @endforeach
                 @endif
             </div>
         </div>
@@ -92,25 +75,6 @@
         <button type="button" class="btn-index" onclick="history.back()">
             {{ __('戻る') }}
         </button>
-    </div>
-</section><!-- End About Section -->
-<section id="testimonials" class="testimonials section-bg">
-    <div class="container" data-aos="fade-up">
-        <div class="section-title">
-            <h2>Wine Reviews</h2>
-            <p>レビュー一覧</p>
-        </div>
-        @foreach ($wine->reviews as $review)
-            <div class="testimonial-item">
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    {{ $review->comment }}
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="{{ $review->wine->image_file }}" class="testimonial-img" alt="">
-                <h3>{{ $review->user->name }}</h3>
-            </div>
-        @endforeach
     </div>
 </section>
 @endsection
