@@ -35,4 +35,13 @@ class Wine extends Model
     {
         return $this->hasMany('\App\Review');
     }
+
+    public function getReviewByUserId($wine, $user_id)
+    {
+        return $wine
+            ->reviews()
+            ->where('user_id', $user_id)
+            ->get();
+    }
+
 }

@@ -27,6 +27,11 @@
                         </li>
                     @endif
                 </ul>
+                <ul>
+                    <li><i class="icofont-world"></i><span>色味：{{ $wine->color }}</span></li>
+                    <li><i class="icofont-hill"></i><span>香り：{{ $wine->aroma }}</span></li>
+                    <li><i class="icofont-grapes"></i><span>味：{{ $wine->taste }}</span></li>
+                </ul>
                 <div class='wine-comment'>
                     <h4>登録者によるコメント</h4>
                     <p>登録者：{{ $wine->user->name }}</p>
@@ -68,9 +73,15 @@
                 </button>
             </form>
         @else
-            <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.create', $wine->id) }}'">
-                {{ __('レビューを投稿する') }}
-            </button>
+            @if (!empty($wine->getReviewByUserId($wine, Auth::user()->id)->toArray()))
+                <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.edit', $wine->id) }}'">
+                    {{ __('レビューを編集する') }}
+                </button>
+            @else
+                <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.create', $wine->id) }}'">
+                    {{ __('レビューを投稿する') }}
+                </button>
+            @endif
         @endif
         <button type="button" class="btn-index" onclick="history.back()">
             {{ __('戻る') }}

@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Wine::class);
     }
+
+    Public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
