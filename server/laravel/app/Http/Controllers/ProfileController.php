@@ -61,10 +61,11 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($user_id)
+    public function show($profile_id)
     {
-        $profile = \App\Profile::find($user_id);
-        return view('profile.show', compact('profile'));//
+        $profile = \App\Profile::find($profile_id);
+        $reviews = \App\Review::where('user_id', $profile->user->id)->get();
+        return view('profile.show', compact('profile', 'reviews'));//
     }
 
     /**

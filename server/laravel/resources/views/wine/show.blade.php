@@ -73,11 +73,7 @@
                 </button>
             </form>
         @else
-            @if (!empty($wine->getReviewByUserId($wine, Auth::user()->id)->toArray()))
-                <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.edit', $wine->id) }}'">
-                    {{ __('レビューを編集する') }}
-                </button>
-            @else
+            @if (empty($wine->getReviewByUserId($wine, Auth::user()->id)->toArray()))
                 <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.create', $wine->id) }}'">
                     {{ __('レビューを投稿する') }}
                 </button>
