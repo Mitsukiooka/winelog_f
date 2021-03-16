@@ -153,7 +153,30 @@ input[type="file"] {
   margin-left: 39%;
 }
 
+.btn-favorite {
+  background: #F93544;
+  border: 0;
+  margin-top: 20px;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
 
+.btn-favorite-undo {
+  background: #4d5158;
+  border: 0;
+  margin-top: 20px;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.favorite-count p {
+  color: #d3af71;
+  font-size: 20px;
+}
 
 @media (max-width: 767px) {
   .form-row .form-group-login {
