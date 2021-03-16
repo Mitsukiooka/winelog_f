@@ -12,7 +12,7 @@ $factory->define(App\Wine::class, function (Faker $faker) {
         'country' => $faker->randomElement(['フランス', 'イタリア', 'スペイン', 'チリ', 'アメリカ']),
         'kind' => $faker->randomElement(['赤', '白', 'スパークリング', 'ロゼ']),
         'type' => $faker->randomElement(['シャルドネ', 'リースリング', 'ピノノワール']),
-        'image_file' => $faker->slug,
+        'image_file' => '',
         'area' => $faker->randomElement(['ナパ・バレー', 'ブルゴーニュ', 'シャンパーニュ']),
         'user_id' => $faker->randomElement([1, 2, 3])
     ];
