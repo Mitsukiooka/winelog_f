@@ -44,4 +44,9 @@ class Wine extends Model
             ->get();
     }
 
+    public function favorite_users()
+    {
+        return $this->belongsToMany(User::class,'favorites','wine_id','user_id')->withTimestamps();
+    }
+
 }

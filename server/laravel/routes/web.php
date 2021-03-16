@@ -24,3 +24,10 @@ Route::get('/','HomeController@index');
 Route::get('home', 'HomeController@index');
 Auth::routes();
 
+Route::group(['middleware'=>'auth'],function(){
+  Route::group(['prefix'=>'wines/{id}'],function(){
+    Route::post('favorite','FavoriteController@store')->name('favorites.favorite');
+    Route::delete('unfavorite','FavoriteController@destroy')->name('favorites.unfavorite');
+  });
+});
+

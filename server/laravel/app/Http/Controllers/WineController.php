@@ -88,7 +88,12 @@ class WineController extends Controller
     public function show($id)
     {
         $wine = \App\Wine::find($id);
-        return view('wine.show', compact('wine'));//
+        $count_favorite_users = $wine->favorite_users()->count();
+
+        $data=[
+            'count_favorite_users'=>$count_favorite_users,
+        ];
+        return view('wine.show', compact('wine'), $data);//
     }
 
     /**

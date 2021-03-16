@@ -51,4 +51,38 @@ class User extends Authenticatable
     {
         return $this->hasMany(Review::class);
     }
+
+    public function favorites()
+    {
+        return $this->belongsToMany(Wine::class, 'favorites', 'user_id', 'wine_id')->withTimestamps();
+    }
+
+    public function favorite($wineId)
+    {
+        $exist = $this->is_favorite($wineId);
+
+        if($exist){
+            return false;
+        }else{
+            $this->favorites()->attach($wineId);
+            return true;
+        }
+    }
+
+    public function unfavorite($wineId)
+    {
+        $exist = $this->is_favorite($wineId);
+
+        if($exist){
+            $this->favorites()->detach($wineId);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function is_favorite($wineId)
+    {
+        return $this->favorites()->where('wine_id',$wineId)->exists();
+    }
 }

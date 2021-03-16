@@ -475,6 +475,15 @@ private static $installed = array (
       ),
       'reference' => 'd01a705763c243b07be795e9d1bb47f89260f73d',
     ),
+    'laravelcollective/html' => 
+    array (
+      'pretty_version' => 'v6.2.1',
+      'version' => '6.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ae15b9c4bf918ec3a78f092b8555551dd693fde3',
+    ),
     'league/commonmark' => 
     array (
       'pretty_version' => '1.5.7',

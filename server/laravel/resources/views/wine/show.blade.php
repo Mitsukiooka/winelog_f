@@ -37,6 +37,20 @@
                     <p>登録者：{{ $wine->user->name }}</p>
                     <p>{{ $wine->comment }}</p>
                 </div>
+                <div>
+                    @if (Auth::user()->is_favorite($wine->id))
+                        {!! Form::open(['route' => ['favorites.unfavorite', $wine->id], 'method' => 'delete']) !!}
+                            {!! Form::submit('いいね！を外す', ['class' => "button btn btn-warning"]) !!}
+                        {!! Form::close() !!}
+                    @else
+                        {!! Form::open(['route' => ['favorites.favorite', $wine->id]]) !!}
+                            {!! Form::submit('いいね！を付ける', ['class' => "button btn btn-success"]) !!}
+                        {!! Form::close() !!}
+                    @endif
+                </div>
+                <div class="text-right mb-2">いいね！
+                    <span class="badge badge-pill badge-success">{{ $count_favorite_users }}</span>
+                </div>
             </div>
         </div>
     </div>
