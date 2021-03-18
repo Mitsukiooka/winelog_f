@@ -67,6 +67,9 @@
                             <div class="box" data-aos="zoom-in" data-aos-delay="100">
                             <span>{{ $review->user->name }}</span>
                             <p>{{ $review->comment }}</p>
+                            @if ($review->user->id == Auth::user()->id)
+                                <a href="{{ route('wine.review.edit', [$wine->id, $review->id]) }}">編集する</a>
+                            @endif
                             </div>
                         </div>
                     @endforeach

@@ -48,10 +48,11 @@ class WineReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($wine_id, $id)
+    {   
+        $wine = \App\Wine::find($wine_id);
         $review = \App\Review::find($id);
-        return view('review.edit', compact('review'));//
+        return view('review.edit', compact('wine', 'review'));//
     }
 
     /**
@@ -61,11 +62,12 @@ class WineReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $wine_id, $id)
     {
         if($request->action === 'back') {
             return redirect()->route('review.edit', $id);
         } else {
+            $wine = \App\Wine::find($wine_id);
             $review = \App\Review::find($id);
             $review->comment = $request->comment;
             $review->save();

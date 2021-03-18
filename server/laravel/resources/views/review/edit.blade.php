@@ -7,7 +7,7 @@
             <h2>Post Review</h2>
         </div>
 
-        <form action="{{ route('wine.review.update', $review->id) }}" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+        <form action="{{ route('wine.review.update',  [$wine->id, $review->id]) }}" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
         @csrf
         @method('PUT')
             <div class="form-group">
