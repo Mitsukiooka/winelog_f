@@ -44,6 +44,15 @@ private static $installed = array (
       ),
       'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
     ),
+    'aws/aws-sdk-php' => 
+    array (
+      'pretty_version' => '3.174.2',
+      'version' => '3.174.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '80cc136f47fa808032f411fff70e26f461852510',
+    ),
     'brick/math' => 
     array (
       'pretty_version' => '0.9.2',
@@ -502,6 +511,15 @@ private static $installed = array (
       ),
       'reference' => '9be3b16c877d477357c015cec057548cf9b2a14a',
     ),
+    'league/flysystem-aws-s3-v3' => 
+    array (
+      'pretty_version' => '1.0.29',
+      'version' => '1.0.29.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4e25cc0582a36a786c31115e419c6e40498f6972',
+    ),
     'league/mime-type-detection' => 
     array (
       'pretty_version' => '1.7.0',
@@ -528,6 +546,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
+    ),
+    'mtdowling/jmespath.php' => 
+    array (
+      'pretty_version' => '2.6.0',
+      'version' => '2.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '42dae2cbd13154083ca6d70099692fef8ca84bfb',
     ),
     'myclabs/deep-copy' => 
     array (
