@@ -33,6 +33,9 @@
           <i class="icofont-glass"></i><p>お気にりのワイン：{{ $profile->favoriteWine }}</p>
           <i class="icofont-waiter"></i><p>お気にりの生産者：{{ $profile->favoriteMaker }}</p>
         </ul>
+        <button type="button" class="btn-index" onclick="location.href='{{ route('profile.edit', $profile->id) }}'">
+            {{ __('プロフィールを変更') }}
+        </button>
         @if (!empty($reviews))
           <section id="why-us" class="why-us">
             <div class="container" data-aos="fade-up">
@@ -47,18 +50,14 @@
                           <span>{{ $review->wine->name }}</span>
                           <p>{{ $review->comment }}</p>
                           </div>
-                          <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.edit', [$review->wine->id, $review->id]) }}'">
-                            {{ __('レビューを編集') }}
-                          </button>
+                          <i class="bx bx-chevron-right"></i>
+                          <a href="{{ route('wine.review.edit', [$review->wine->id, $review->id]) }}">{{ __('レビューを編集') }}</a>
                       </div>
                   @endforeach
                 </div>
             </div>
           </section>
         @endif
-        <button type="button" class="btn-index" onclick="location.href='{{ route('profile.edit', $profile->id) }}'">
-            {{ __('更新') }}
-        </button>
       </div>
     </div>
   </div>

@@ -178,6 +178,7 @@ input[type="file"] {
   font-size: 20px;
 }
 
+
 @media (max-width: 767px) {
   .form-row .form-group-login {
     margin-left: 0;

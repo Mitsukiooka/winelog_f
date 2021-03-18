@@ -4,7 +4,8 @@
 <section id="book-a-table" class="book-a-table">
     <div class="container" data-aos="fade-up">
         <div class="section-title">
-            <h2>Post Review</h2>
+            <h2>Edit Review</h2>
+            <p>{{ $review->wine->name }}のレビューを編集</p>
         </div>
 
         <form action="{{ route('wine.review.update',  [$wine->id, $review->id]) }}" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">

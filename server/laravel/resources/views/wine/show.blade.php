@@ -69,9 +69,8 @@
                             <p>{{ $review->comment }}</p>
                             </div>
                             @if ($review->user->id == Auth::user()->id)
-                                <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.edit', [$review->wine->id, $review->id]) }}'">
-                                    {{ __('レビューを編集') }}
-                                </button>
+                                <i class="bx bx-chevron-right"></i>
+                                <a href="{{ route('wine.review.edit', [$review->wine->id, $review->id]) }}">{{ __('レビューを編集') }}</a>
                             @endif
                         </div>
                     @endforeach

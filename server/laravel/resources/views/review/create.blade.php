@@ -5,6 +5,7 @@
     <div class="container" data-aos="fade-up">
         <div class="section-title">
             <h2>Post Review</h2>
+            <p>{{ $wine->name }}のレビューを作成</p>
         </div>
 
         <form action="{{ route('wine.review.store', $wine->id) }}" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
