@@ -67,10 +67,12 @@
                             <div class="box" data-aos="zoom-in" data-aos-delay="100">
                             <span>{{ $review->user->name }}</span>
                             <p>{{ $review->comment }}</p>
-                            @if ($review->user->id == Auth::user()->id)
-                                <a href="{{ route('wine.review.edit', [$wine->id, $review->id]) }}">編集する</a>
-                            @endif
                             </div>
+                            @if ($review->user->id == Auth::user()->id)
+                                <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.edit', [$review->wine->id, $review->id]) }}'">
+                                    {{ __('レビューを編集') }}
+                                </button>
+                            @endif
                         </div>
                     @endforeach
                 @endif

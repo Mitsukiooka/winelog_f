@@ -60,7 +60,7 @@
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary-login" name='action' value='add'>
-                        {{ __('追加') }}
+                        {{ __('プロフィール作成') }}
                     </button>
                 </div>
             </div>

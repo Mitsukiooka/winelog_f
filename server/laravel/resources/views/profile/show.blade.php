@@ -47,6 +47,9 @@
                           <span>{{ $review->wine->name }}</span>
                           <p>{{ $review->comment }}</p>
                           </div>
+                          <button type="button" class="btn-index" onclick="location.href='{{ route('wine.review.edit', [$review->wine->id, $review->id]) }}'">
+                            {{ __('レビューを編集') }}
+                          </button>
                       </div>
                   @endforeach
                 </div>

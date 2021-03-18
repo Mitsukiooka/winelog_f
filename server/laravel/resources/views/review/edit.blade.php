@@ -23,7 +23,7 @@
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary" name='action' value='add'>
-                        {{ __('投稿') }}
+                        {{ __('更新') }}
                     </button>
                     <button type="submit" class="btn btn-primary" name='action' value='back'>
                         {{ __('戻る') }}
