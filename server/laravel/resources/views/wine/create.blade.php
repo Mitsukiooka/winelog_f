@@ -61,7 +61,7 @@
                 <textarea class="form-control" name="comment" id="comment" rows="5" placeholder="評価"></textarea>
                 <div class="validate"></div>
             </div>
-            <label for="maker_id">生産者を選んでください</label>
+            <label class='file' for="maker_id">生産者を選んでください</label>
             <div class="col-lg-4 col-md-6 wine-maker select-box">
                 <select id="maker_id" name="maker_id">
                     @foreach($makers as $maker)

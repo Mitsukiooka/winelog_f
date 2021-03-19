@@ -9,25 +9,23 @@
 
         <form action="{{ route('profile.store') }}" method="post" enctype='multipart/form-data' role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
         @csrf
-            <div class="form-row">
-                <label for="favoriteWine">お気に入りのワイン</label>
-                <div class="col-lg-4 col-md-6 wine-maker select-box">
-                    <select id="favoriteWine" name="favoriteWine">
-                        @foreach($wines as $wine)
-                        <option value="{{ $wine->name }}">{{ $wine->name }}</option>
-                        @endforeach
-                    </select>
-                    <div class="validate"></div>
-                </div>
-                <label for="favoriteMaker">お気に入りの生産者</label>
-                <div class="col-lg-4 col-md-6 wine-maker select-box">
-                    <select id="favoriteMaker" name="favoriteMaker">
-                        @foreach($makers as $maker)
-                        <option value="{{ $maker->name }}">{{ $maker->name }}</option>
-                        @endforeach
-                    </select>
-                    <div class="validate"></div>
-                </div>
+            <label class='file' for="favoriteWine">お気に入りのワイン</label>
+            <div class="col-lg-12 col-md-6 wine-maker select-box">
+                <select id="favoriteWine" name="favoriteWine">
+                    @foreach($wines as $wine)
+                    <option value="{{ $wine->name }}">{{ $wine->name }}</option>
+                    @endforeach
+                </select>
+                <div class="validate"></div>
+            </div>
+            <label class='file' for="favoriteMaker">お気に入りの生産者</label>
+            <div class="col-lg-12 col-md-6 wine-maker select-box">
+                <select id="favoriteMaker" name="favoriteMaker">
+                    @foreach($makers as $maker)
+                    <option value="{{ $maker->name }}">{{ $maker->name }}</option>
+                    @endforeach
+                </select>
+                <div class="validate"></div>
             </div>
             <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">

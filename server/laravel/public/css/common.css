@@ -90,6 +90,8 @@
 	border-radius: 2px;
 	border: 2px solid #bab3a6;
 	background: #0D0B09;
+  margin:0;
+  display: inline-block;
 }
 .wine-maker.select-box::before {
 	position: absolute;
@@ -150,7 +152,7 @@ input[type="file"] {
 }
 
 .form-group-file {
-  margin-left: 39%;
+  float: right;
 }
 
 .btn-favorite {
@@ -176,6 +178,10 @@ input[type="file"] {
 .favorite-count p {
   color: #d3af71;
   font-size: 20px;
+}
+
+.file {
+  display: block;
 }
 
 

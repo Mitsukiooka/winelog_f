@@ -27,7 +27,7 @@
                     <div class="menu-ingredients">
                         <p>{{ $wine->kind}}ワイン/{{ $wine->area }}産</p>
                         <p>登録ユーザー：{{ $wine->user->name }}</p>
-                        <p?>イイね！：{{ $wine->favorite_users()->count()  }}</p>
+                        <p>イイね！：{{ $wine->favorite_users()->count()  }}</p>
                     </div>
                 </div>
             @endforeach

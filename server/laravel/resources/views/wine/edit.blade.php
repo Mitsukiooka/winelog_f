@@ -53,11 +53,11 @@
                 </div>
             </div>
             <div class="form-group">
-            <label for="comment">コメント</label>
+                <label for="comment">コメント</label>
                 <textarea class="form-control" name="comment" id="comment" rows="5">{{ $wine->comment }}</textarea>
                 <div class="validate"></div>
             </div>
-            <label for="maker_id">生産者を選んでください</label>
+            <label class='file' for="maker_id">生産者を選んでください</label>
             <div class="col-lg-4 col-md-6 wine-maker select-box">
                 <select id="maker_id" name="maker_id">
                     @foreach($makers as $maker)
