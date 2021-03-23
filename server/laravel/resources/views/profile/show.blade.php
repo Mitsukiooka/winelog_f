@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-lg-6 col-md-12">
         <div class="member" data-aos="zoom-in" data-aos-delay="100">
-          @if (!empty($wine->image_file))
+          @if (!empty($profile->image_file))
             <img src="{{ $profile->image_file }}" class="img-fluid" alt="">
           @else
             <img src="../img/default_profile.png" class="img-fluid" alt="">

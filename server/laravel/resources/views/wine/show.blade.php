@@ -68,6 +68,8 @@
                             <span>{{ $review->user->name }}</span>
                             <p>{{ $review->comment }}</p>
                             </div>
+                            <i class="bx bx-chevron-right"></i>
+                            <a href="{{ route('wine.review.show', [$review->wine->id, $review->id]) }}">{{ __('レビューを見る') }}</a>
                             @if ($review->user->id == Auth::user()->id)
                                 <i class="bx bx-chevron-right"></i>
                                 <a href="{{ route('wine.review.edit', [$review->wine->id, $review->id]) }}">{{ __('レビューを編集') }}</a>

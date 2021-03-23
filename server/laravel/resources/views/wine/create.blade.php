@@ -42,17 +42,17 @@
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
                     <label for="color">色味</label>
-                    <input type="number" class="form-control" name="color" id="color" min="1" max="5" placeholder="色味">
+                    <input type="number" class="form-control" name="color" id="color" min="1" max="5" placeholder="色味(1-5)">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
                     <label for="taste">味</label>
-                    <input type="number" class="form-control" name="taste" id="taste" min="1" max="5" placeholder="味">
+                    <input type="number" class="form-control" name="taste" id="taste" min="1" max="5" placeholder="味(1-5)">
                     <div class="validate"></div>
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
                     <label for="aroma">香り</label>
-                    <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" placeholder="香り">
+                    <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" placeholder="香り(1-5)">
                     <div class="validate"></div>
                 </div>
             </div>

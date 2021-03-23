@@ -43,6 +43,19 @@ class WineReviewController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($wine_id, $id)
+    {
+        $wine = \App\Wine::find($wine_id);
+        $review = \App\Review::find($id);
+        return view('review.show', compact('wine', 'review'));//
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
