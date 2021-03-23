@@ -34,10 +34,9 @@
         <ul>
           <i class="icofont-glass"></i><p>お気にりのワイン：{{ $profile->favoriteWine }}</p>
           <i class="icofont-waiter"></i><p>お気にりの生産者：{{ $profile->favoriteMaker }}</p>
+          <i class="bx bx-chevron-right"></i>
+          <a href="{{ route('profile.edit', $profile->id) }}">{{ __('プロフィールを変更') }}</a>
         </ul>
-        <button type="button" class="btn-index" onclick="location.href='{{ route('profile.edit', $profile->id) }}'">
-            {{ __('プロフィールを変更') }}
-        </button>
       </div>
     </div>
     <div class="row">

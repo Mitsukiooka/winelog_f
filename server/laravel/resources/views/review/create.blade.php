@@ -25,7 +25,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
             </div>
-            <div class="form-group row mb-0">
+            <div class="form-group-button row mb-0">
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary" name='action' value='add'>
                         {{ __('投稿') }}
