@@ -121,7 +121,7 @@
                     <button type="submit" class="btn btn-primary" name='action' value='add'>
                         {{ __('追加') }}
                     </button>
-                    <button type="submit" class="btn btn-primary" name='action' value='back'>
+                    <button type="button" class="btn-index" onclick="location.href='{{ route('wine.index') }}'">
                         {{ __('戻る') }}
                     </button>
                 </div>

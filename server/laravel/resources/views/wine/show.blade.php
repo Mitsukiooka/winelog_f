@@ -99,7 +99,7 @@
                 </button>
             @endif
         @endif
-        <button type="button" class="btn-index" onclick="history.back()">
+        <button type="button" class="btn-index" onclick="location.href='{{ route('wine.index') }}'">
             {{ __('戻る') }}
         </button>
     </div>

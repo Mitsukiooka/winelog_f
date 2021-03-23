@@ -31,7 +31,7 @@
                     <button type="submit" class="btn btn-primary" name='action' value='add'>
                         {{ __('更新') }}
                     </button>
-                    <button type="submit" class="btn btn-primary" name='action' value='back'>
+                    <button type="button" class="btn-index" onclick="location.href='{{ route('wine.show', $wine->id) }}'">
                         {{ __('戻る') }}
                     </button>
                 </div>
