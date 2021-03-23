@@ -52,6 +52,14 @@ class WineController extends Controller
         } else {
             $rules = [
                 'name' => ['required', 'string', 'unique:wines'],
+                'country' => ['required', 'string'],
+                'kind' => ['required', 'string'],
+                'type' => ['required', 'string'],
+                'area' => ['required', 'string'],
+                'maker_id' => ['required', 'integer'],
+                'color' => ['required', 'integer'],
+                'taste' => ['required', 'integer'],
+                'aroma' => ['required', 'integer']
             ];
             $this->validate($request, $rules);
             $wine = new \App\Wine;
@@ -121,6 +129,18 @@ class WineController extends Controller
         if($request->action === 'back') {
             return redirect()->route('wine.index');
         } else {
+            $rules = [
+                'name' => ['required', 'string'],
+                'country' => ['required', 'string'],
+                'kind' => ['required', 'string'],
+                'type' => ['required', 'string'],
+                'area' => ['required', 'string'],
+                'maker_id' => ['required', 'integer'],
+                'color' => ['required', 'integer'],
+                'taste' => ['required', 'integer'],
+                'aroma' => ['required', 'integer']
+            ];
+            $this->validate($request, $rules);
             $wine = \App\Wine::find($id);
             if ($request->hasFile('image_file')) {
                 $file = $request->file('image_file');

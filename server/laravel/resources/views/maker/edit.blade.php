@@ -13,13 +13,23 @@
             <div class="form-row">
                 <div class="col-lg-6 col-md-6 form-group">
                 <label for="name">生産者名</label>
-                    <input type="text" name="name" class="form-control" id="name" value="{{ $maker->name }}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ $maker->name }}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                     <div class="validate"></div>
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">
                 <label for="country">出身国</label>
-                    <input type="text" class="form-control" name="country" id="country" value="{{ $maker->country }}"  placeholder="Country">
+                    <input type="text" class="form-control @error('country') is-invalid @enderror" name="country" id="country" value="{{ $maker->country }}"  placeholder="Country">
                     <div class="validate"></div>
+                    @error('country')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-4 col-md-6 form-group-file">
                     <label>

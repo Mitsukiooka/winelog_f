@@ -13,43 +13,83 @@
             <div class="form-row">
                 <div class="col-lg-12 col-md-6 form-group">
                 <label for="name">ワインの名前</label>
-                    <input type="text" name="name" class="form-control" id="name" value="{{ $wine->name }}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ $wine->name }}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                     <div class="validate"></div>
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">
                 <label for="country">生産国</label>
-                    <input type="text" class="form-control" name="country" id="country" value="{{ $wine->country }}">
+                    <input type="text" class="form-control @error('country') is-invalid @enderror" name="country" id="country" value="{{ $wine->country }}">
                     <div class="validate"></div>
+                    @error('country')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">
                 <label for="area">生産地域</label>
-                    <input type="text" class="form-control" name="area" id="area" value="{{ $wine->area }}">
+                    <input type="text" class="form-control @error('area') is-invalid @enderror" name="area" id="area" value="{{ $wine->area }}">
                     <div class="validate"></div>
+                    @error('area')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">
                 <label for="kind">ワインの種類</label>
-                    <input type="text" class="form-control" name="kind" id="kind" value="{{ $wine->kind }}">
+                    <input type="text" class="form-control @error('kind') is-invalid @enderror" name="kind" id="kind" value="{{ $wine->kind }}">
                     <div class="validate"></div>
+                    @error('kind')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">
                 <label for="type">ブドウ品種</label>
-                    <input type="text" name="type" class="form-control" id="type" value="{{ $wine->type }}">
+                    <input type="text" name="type" class="form-control @error('type') is-invalid @enderror" id="type" value="{{ $wine->type }}">
                     <div class="validate"></div>
+                    @error('type')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
                 <label for="color">色味</label>
-                    <input type="number" class="form-control" name="color" id="color" min="1" max="5" value="{{ $wine->color }}">
+                    <input type="number" class="form-control @error('color') is-invalid @enderror" name="color" id="color" min="1" max="5" value="{{ $wine->color }}">
                     <div class="validate"></div>
+                    @error('color')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
                 <label for="taste">味</label>
-                    <input type="number" class="form-control" name="taste" id="taste" min="1" max="5" value="{{ $wine->taste }}">
+                    <input type="number" class="form-control @error('taste') is-invalid @enderror" name="taste" id="taste" min="1" max="5" value="{{ $wine->taste }}">
                     <div class="validate"></div>
+                    @error('taste')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-4 col-md-6 form-group">
                 <label for="aroma">香り</label>
-                    <input type="number" class="form-control" name="aroma" id="aroma" min="1" max="5" value="{{ $wine->aroma }}">
+                    <input type="number" class="form-control @error('aroma') is-invalid @enderror" name="aroma" id="aroma" min="1" max="5" value="{{ $wine->aroma }}">
                     <div class="validate"></div>
+                    @error('aroma')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
             </div>
             <div class="form-group">

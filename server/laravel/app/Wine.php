@@ -18,7 +18,8 @@ class Wine extends Model
         'color',
         'taste',
         'aroma',
-        'comment'
+        'comment',
+        'area'
     ];
 
     Public function maker()

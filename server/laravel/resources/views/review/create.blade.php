@@ -12,8 +12,13 @@
         @csrf
             <div class="form-group">
                 <label for="comment">レビュー</label>
-                <textarea class="form-control" name="comment" id="comment" rows="5" placeholder="レビュー"></textarea>
+                <textarea class="form-control @error('comment') is-invalid @enderror" name="comment" id="comment" rows="5" placeholder="レビュー"></textarea>
                 <div class="validate"></div>
+                @error('comment')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
             <div class="mb-3">
                 <div class="loading">Loading</div>

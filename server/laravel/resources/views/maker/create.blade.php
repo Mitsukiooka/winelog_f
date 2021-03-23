@@ -22,8 +22,13 @@
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">
                 <label for="country">出身国</label>
-                    <input type="text" class="form-control" name="country" id="country" placeholder="出身国">
+                    <input type="text" class="form-control @error('country') is-invalid @enderror" name="country" id="country" placeholder="出身国">
                     <div class="validate"></div>
+                    @error('country')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-lg-4 col-md-6 form-group-file">
                     <label>

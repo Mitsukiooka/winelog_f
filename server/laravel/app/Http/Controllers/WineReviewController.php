@@ -32,6 +32,10 @@ class WineReviewController extends Controller
         if($request->action === 'back') {
             return redirect()->route('review.create');
         } else {
+            $rules = [
+                'comment' => ['required', 'text'],
+            ];
+            $this->validate($request, $rules);
             $wine = \App\Wine::find($wine_id);
             $review = new \App\Review;
             $review->user_id = Auth::id();
@@ -80,6 +84,10 @@ class WineReviewController extends Controller
         if($request->action === 'back') {
             return redirect()->route('review.edit', $id);
         } else {
+            $rules = [
+                'comment' => ['required', 'text'],
+            ];
+            $this->validate($request, $rules);
             $wine = \App\Wine::find($wine_id);
             $review = \App\Review::find($id);
             $review->comment = $request->comment;

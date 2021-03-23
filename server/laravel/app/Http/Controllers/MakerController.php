@@ -50,6 +50,7 @@ class MakerController extends Controller
         } else {
             $rules = [
                 'name' => ['required', 'string', 'unique:makers'],
+                'country' => ['required', 'string']
             ];
             $this->validate($request, $rules);
             $maker = new \App\Maker;
@@ -105,6 +106,11 @@ class MakerController extends Controller
         if($request->action === 'back') {
             return redirect()->route('maker.index');
         } else {
+            $rules = [
+                'name' => ['required', 'string'],
+                'country' => ['required', 'string']
+            ];
+            $this->validate($request, $rules);
             $maker = \App\Maker::find($id);
             if ($request->hasFile('image_file')) {
                 $file = $request->file('image_file');

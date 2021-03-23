@@ -142,7 +142,15 @@ return [
     */
 
     'attributes' => [
-        'name' =>'名前'
+        'name' =>'名前',
+        'country' => '国名',
+        'area' => '生産地域名',
+        'kind' => 'ワインの種類',
+        'type' => 'ブドウ品種',
+        'color' => '色味スコア',
+        'taste' => '味スコア',
+        'aroma' => '香りスコア',
+        'comment' => 'レビュー'
     ],
 
 ];
