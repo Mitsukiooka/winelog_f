@@ -21,4 +21,9 @@ class Review extends Model
     {
         return $this->belongsTo('\App\Wine');
     }
+
+    Public function displayReview($comment) 
+    {
+        return mb_substr($comment, 0, 50, "UTF-8");
+    }
 }
