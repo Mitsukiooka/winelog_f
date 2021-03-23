@@ -33,7 +33,7 @@ class WineReviewController extends Controller
             return redirect()->route('review.create');
         } else {
             $rules = [
-                'comment' => ['required', 'text'],
+                'comment' => ['required', 'string'],
             ];
             $this->validate($request, $rules);
             $wine = \App\Wine::find($wine_id);
@@ -85,7 +85,7 @@ class WineReviewController extends Controller
             return redirect()->route('review.edit', $id);
         } else {
             $rules = [
-                'comment' => ['required', 'text'],
+                'comment' => ['required', 'string'],
             ];
             $this->validate($request, $rules);
             $wine = \App\Wine::find($wine_id);
